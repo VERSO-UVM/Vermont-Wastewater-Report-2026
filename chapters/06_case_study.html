@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/06_case_study';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -419,11 +421,89 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interstate-and-international-coordination">Interstate and International Coordination</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-champlain-tmdl">Lake Champlain TMDL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-quality-monitoring">Water Quality Monitoring</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facility-upgrades-and-improvements">Facility Upgrades and Improvements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-collaboration">Regional Collaboration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings">Key Findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-champlain-tmdl">Lake Champlain TMDL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tmdl-development-and-approval">TMDL Development and Approval</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tmdl-structure-and-allocations">TMDL Structure and Allocations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wasteload-allocations-wlas">Wasteload Allocations (WLAs)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-allocations-las">Load Allocations (LAs)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-of-safety">Margin of Safety</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-specific-targets">Segment-Specific Targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-and-accountability">Implementation and Accountability</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#point-source-implementation-wasteload-allocations">Point Source Implementation (Wasteload Allocations)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nonpoint-source-implementation-load-allocations">Nonpoint Source Implementation (Load Allocations)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#progress-and-challenges">Progress and Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vermont-clean-water-initiative-and-reporting">Vermont Clean Water Initiative and Reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interstate-coordination">Interstate Coordination</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-quality-monitoring">Water Quality Monitoring</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-champlain-long-term-monitoring-project">Lake Champlain Long-Term Monitoring Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-parameters-and-methods">Monitoring Parameters and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-lake-monitoring">In-Lake Monitoring</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tributary-monitoring">Tributary Monitoring</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#water-quality-trends">Water Quality Trends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tributary-loading-trends">Tributary Loading Trends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-indicators">Biological Indicators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-applications-and-reporting">Data Applications and Reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings-and-implications-for-wastewater-management">Key Findings and Implications for Wastewater Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facility-upgrades-and-improvements">Facility Upgrades and Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tmdl-implementation-framework">TMDL Implementation Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-facility-upgrades">Major Facility Upgrades</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#burlington-main-wwtf">Burlington Main WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rutland-wwtf">Rutland WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montpelier-wwtf">Montpelier WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#middlebury-wwtf">Middlebury WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#essex-junction-wwtf">Essex Junction WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#small-and-rural-facility-upgrades">Small and Rural Facility Upgrades</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phosphorus-removal-technologies">Phosphorus Removal Technologies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-precipitation">Chemical Precipitation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tertiary-filtration">Tertiary Filtration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enhanced-biological-phosphorus-removal-ebpr">Enhanced Biological Phosphorus Removal (EBPR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-optimization">Operational Optimization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-and-financial-mechanisms">Funding and Financial Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-water-state-revolving-fund-cwsrf">Clean Water State Revolving Fund (CWSRF)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-water-fund-act-64">Clean Water Fund (Act 64)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#municipal-bonding-and-rate-increases">Municipal Bonding and Rate Increases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#federal-support">Federal Support</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tracking-and-compliance">Performance Tracking and Compliance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ongoing-challenges-and-future-needs">Ongoing Challenges and Future Needs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#climate-change-impacts">Climate Change Impacts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aging-infrastructure">Aging Infrastructure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#emerging-contaminants">Emerging Contaminants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#small-system-capacity">Small System Capacity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accountability-and-adaptive-management">Accountability and Adaptive Management</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-resources-and-references">Key Resources and References</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings">Key Findings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#point-source-phosphorus-control-a-success-story">Point-Source Phosphorus Control: A Success Story</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonpoint-sources-the-remaining-challenge">Nonpoint Sources: The Remaining Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-and-economic-considerations">Funding and Economic Considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interstate and International Coordination</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-adaptive-management">Monitoring and Adaptive Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technology-and-innovation">Technology and Innovation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equity-and-environmental-justice">Equity and Environmental Justice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-collaboration-and-the-lake-champlain-basin-program">Regional Collaboration and the Lake Champlain Basin Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-for-other-watersheds">Lessons for Other Watersheds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -774,23 +854,861 @@ document.write(`
 </section>
 <section id="lake-champlain-tmdl">
 <h2>Lake Champlain TMDL<a class="headerlink" href="#lake-champlain-tmdl" title="Permalink to this heading">#</a></h2>
-<p>The Lake Champlain Total Maximum Daily Load (TMDL) establishes phosphorus reduction targets for point and nonpoint sources.</p>
+<p>The Lake Champlain Total Maximum Daily Load (TMDL) establishes phosphorus reduction targets for point and nonpoint sources, providing the regulatory framework for restoring water quality in the lake and its tributaries. The TMDL translates the scientific phosphorus reduction strategy into enforceable wasteload allocations and load allocations that guide permitting, funding, and implementation across Vermont and New York.</p>
+<section id="tmdl-development-and-approval">
+<h3>TMDL Development and Approval<a class="headerlink" href="#tmdl-development-and-approval" title="Permalink to this heading">#</a></h3>
+<p>The Lake Champlain TMDL was developed jointly by Vermont and New York in response to Clean Water Act Section 303(d) requirements for impaired waters. Key milestones:</p>
+<ul class="simple">
+<li><p><strong>Early 2000s</strong>: Initial TMDL development and modeling to link external phosphorus loads to in-lake concentrations</p></li>
+<li><p><strong>2002</strong>: EPA approved initial Lake Champlain phosphorus TMDL for Vermont segments</p></li>
+<li><p><strong>2015-2016</strong>: Vermont and New York completed updated TMDL analysis incorporating new monitoring data, improved modeling, and lessons learned from implementation</p></li>
+<li><p><strong>2016</strong>: EPA approved the revised Lake Champlain Phosphorus TMDL for Vermont segments after extensive public comment and peer review</p></li>
+<li><p><strong>Ongoing</strong>: Adaptive management and periodic TMDL reassessment as monitoring data and scientific understanding evolve</p></li>
+</ul>
+<p>The TMDL addresses impairments to aquatic life use, recreational use, and aesthetics caused by excessive phosphorus and resulting algal blooms and cyanobacteria in multiple lake segments.</p>
+</section>
+<section id="tmdl-structure-and-allocations">
+<h3>TMDL Structure and Allocations<a class="headerlink" href="#tmdl-structure-and-allocations" title="Permalink to this heading">#</a></h3>
+<p>The TMDL allocates phosphorus reductions among source sectors using the fundamental equation:</p>
+<p><strong>TMDL = Wasteload Allocations (point sources) + Load Allocations (nonpoint sources) + Margin of Safety</strong></p>
+<section id="wasteload-allocations-wlas">
+<h4>Wasteload Allocations (WLAs)<a class="headerlink" href="#wasteload-allocations-wlas" title="Permalink to this heading">#</a></h4>
+<p>WLAs assign phosphorus load limits to point sources—primarily wastewater treatment facilities with NPDES permits—expressed as concentration limits (mg/L) or mass-based limits (kg/year or lbs/year). Key aspects:</p>
+<ul class="simple">
+<li><p><strong>Facility-specific limits</strong>: Each NPDES-permitted facility receives an individual WLA based on design flow, receiving water sensitivity, and assimilative capacity</p></li>
+<li><p><strong>Seasonal differentiation</strong>: Summer limits (April-October) are typically more stringent than winter limits, reflecting higher algal growth and lower dilution during warm months</p></li>
+<li><p><strong>Technology-based minimums</strong>: All facilities must meet at least secondary treatment standards (30/30 BOD/TSS mg/L); many exceed these to achieve phosphorus targets</p></li>
+<li><p><strong>Compliance averaging</strong>: Monthly average limits with occasional allowance for weekly or daily maximum exceedances (depending on permit language)</p></li>
+<li><p><strong>CSO allocations</strong>: Combined sewer systems receive separate allocations for overflow events, with reduction targets tied to long-term control plans</p></li>
+</ul>
+<p>Major WWTFs in the Lake Champlain basin operate under WLAs ranging from &lt;0.5 mg/L to 1.0 mg/L total phosphorus during summer months, requiring advanced treatment (chemical precipitation, tertiary filtration) beyond conventional secondary treatment.</p>
+</section>
+<section id="load-allocations-las">
+<h4>Load Allocations (LAs)<a class="headerlink" href="#load-allocations-las" title="Permalink to this heading">#</a></h4>
+<p>LAs apply to nonpoint sources—agriculture, developed lands, roads, atmospheric deposition, and natural background—which collectively contribute the majority of Lake Champlain’s phosphorus load. Unlike point sources, nonpoint sources lack individual permits, so LAs are expressed as watershed or sector-wide targets:</p>
+<ul class="simple">
+<li><p><strong>Agricultural lands</strong>: Cropland, pasture, and barnyard runoff; managed through voluntary best management practices (nutrient management plans, cover crops, manure storage upgrades, fencing, riparian buffers) incentivized by state and federal cost-share programs</p></li>
+<li><p><strong>Developed lands (urban stormwater)</strong>: Runoff from impervious surfaces; regulated through MS4 permits for larger municipalities and state stormwater permits for development projects; managed via green infrastructure, stormwater treatment, and Low Impact Development</p></li>
+<li><p><strong>Roads and transportation</strong>: Sediment and phosphorus from road surfaces, ditches, and maintenance activities; Vermont Agency of Transportation implements erosion control, ditch stabilization, and road salt management</p></li>
+<li><p><strong>Streambank erosion</strong>: Channel instability and bank failure deliver sediment and phosphorus; addressed through river corridor protection, floodplain restoration, and strategic bank stabilization</p></li>
+<li><p><strong>Atmospheric deposition</strong>: Direct rainfall onto lake surface; minor contributor with limited management options</p></li>
+<li><p><strong>Natural background</strong>: Forested and undeveloped lands; represents baseline load that cannot be further reduced</p></li>
+</ul>
+<p>The TMDL requires substantial LA reductions—particularly from agriculture and developed lands—to achieve overall phosphorus targets, but implementation depends on voluntary participation, funding availability, and technical assistance rather than enforceable permits.</p>
+</section>
+<section id="margin-of-safety">
+<h4>Margin of Safety<a class="headerlink" href="#margin-of-safety" title="Permalink to this heading">#</a></h4>
+<p>The TMDL includes a margin of safety (MOS) to account for uncertainty in the phosphorus budget, load-response modeling, and climate variability. The MOS can be:</p>
+<ul class="simple">
+<li><p><strong>Explicit</strong>: A percentage reduction applied to calculated allocations (e.g., 10% reduction)</p></li>
+<li><p><strong>Implicit</strong>: Conservative assumptions in modeling (e.g., using 90th percentile flow conditions, assuming less-than-complete BMP effectiveness)</p></li>
+</ul>
+<p>The Lake Champlain TMDL employs both explicit and implicit MOS to provide confidence that achieving allocated loads will restore water quality even under variable conditions.</p>
+</section>
+</section>
+<section id="segment-specific-targets">
+<h3>Segment-Specific Targets<a class="headerlink" href="#segment-specific-targets" title="Permalink to this heading">#</a></h3>
+<p>The TMDL establishes phosphorus reduction targets for each of Lake Champlain’s 13 segments, recognizing that different segments have different sensitivities and require tailored management:</p>
+<ul class="simple">
+<li><p><strong>Missisquoi Bay</strong>: Most impaired segment; experiences severe cyanobacteria blooms; requires &gt;60% load reduction; focus on agricultural sources in the Missisquoi River watershed (Vermont and Québec)</p></li>
+<li><p><strong>St. Albans Bay</strong>: Impaired shallow embayment; targets reductions from direct discharges (St. Albans WWTF, water treatment plants) and agricultural lands in contributing watershed</p></li>
+<li><p><strong>Inner Burlington Bay/Shelburne Bay</strong>: Urban influence from Burlington metro area; CSO controls, stormwater management, and WWTF upgrades key to improvement</p></li>
+<li><p><strong>Main Lake segments</strong>: Deeper, better-mixed segments with lower sensitivity but still requiring phosphorus reductions to prevent offshore blooms and maintain cold-water fishery habitat</p></li>
+<li><p><strong>South Lake/Otter Creek</strong>: Influenced by Otter Creek loads; agricultural and municipal sources (Rutland, Middlebury, smaller communities) targeted for reductions</p></li>
+<li><p><strong>Isle La Motte and other segments</strong>: Varied impairment levels and reduction needs based on local sources and hydrodynamic characteristics</p></li>
+</ul>
+<p>Each segment’s target is linked to a specific in-lake phosphorus concentration goal established in the 1993 Water Quality Agreement (renewed 2010), ensuring that load reductions translate to measurable water quality improvements.</p>
+</section>
+<section id="implementation-and-accountability">
+<h3>Implementation and Accountability<a class="headerlink" href="#implementation-and-accountability" title="Permalink to this heading">#</a></h3>
+<p>The TMDL is implemented through multiple regulatory and programmatic mechanisms:</p>
+<section id="point-source-implementation-wasteload-allocations">
+<h4>Point Source Implementation (Wasteload Allocations)<a class="headerlink" href="#point-source-implementation-wasteload-allocations" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>NPDES permit limits</strong>: WLAs are incorporated into facility-specific NPDES permits as numeric effluent limits; permits are reissued every 5 years, allowing progressive limit tightening</p></li>
+<li><p><strong>Compliance monitoring</strong>: Facilities self-report through monthly Discharge Monitoring Reports (DMRs); Vermont DEC conducts periodic inspections and reviews data for compliance</p></li>
+<li><p><strong>Enforcement</strong>: Non-compliance triggers escalating enforcement (notices of violation, administrative orders, penalties, permit modifications)</p></li>
+<li><p><strong>Capital funding</strong>: State Revolving Fund (SRF) loans and grants support facility upgrades to meet tighter phosphorus limits</p></li>
+<li><p><strong>Performance tracking</strong>: Annual phosphorus load reports compiled from DMRs to assess progress toward TMDL targets</p></li>
+</ul>
+</section>
+<section id="nonpoint-source-implementation-load-allocations">
+<h4>Nonpoint Source Implementation (Load Allocations)<a class="headerlink" href="#nonpoint-source-implementation-load-allocations" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Tactical Basin Plans</strong>: Vermont DEC develops watershed-specific plans identifying priority areas, practices, and timelines for nonpoint-source reductions</p></li>
+<li><p><strong>Agricultural programs</strong>: USDA Natural Resources Conservation Service (NRCS) and Vermont Agency of Agriculture provide technical and financial assistance for farm BMPs; Required Agricultural Practices (RAPs) regulation establishes minimum standards</p></li>
+<li><p><strong>Stormwater programs</strong>: MS4 permits require municipalities to implement stormwater management programs; state permits require post-construction stormwater controls for new development</p></li>
+<li><p><strong>Clean Water State Revolving Fund</strong>: Provides loans and grants for nonpoint-source projects (stormwater retrofits, agricultural BMPs, river corridor restoration)</p></li>
+<li><p><strong>Act 64 (Vermont Clean Water Act, 2015)</strong>: Expanded state authority and funding for clean water projects, accelerated TMDL implementation, and established the Clean Water Fund to support nonpoint-source reductions</p></li>
+<li><p><strong>Monitoring and adaptive management</strong>: Long-term water quality monitoring tracks in-lake concentrations and tributary loads; implementation strategies adjusted based on progress and emerging science</p></li>
+</ul>
+</section>
+</section>
+<section id="progress-and-challenges">
+<h3>Progress and Challenges<a class="headerlink" href="#progress-and-challenges" title="Permalink to this heading">#</a></h3>
+<p>Since TMDL approval and implementation acceleration through Act 64:</p>
+<p><strong>Progress:</strong></p>
+<ul class="simple">
+<li><p>Point-source phosphorus loads reduced to well below WLAs at major facilities (Burlington, Rutland, Montpelier, Middlebury)</p></li>
+<li><p>CSO volumes reduced through infrastructure investments and green infrastructure</p></li>
+<li><p>Thousands of acres of agricultural lands enrolled in nutrient management, cover crops, and riparian buffers</p></li>
+<li><p>Stormwater retrofits implemented in urban areas (rain gardens, bioretention, permeable pavement)</p></li>
+<li><p>River corridor protection policies adopted in many municipalities</p></li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul class="simple">
+<li><p>Nonpoint-source reductions lag behind TMDL targets; voluntary nature of agricultural programs limits participation; cost-share funding insufficient to meet demand</p></li>
+<li><p>Climate change intensifies storms and runoff, counteracting reduction efforts</p></li>
+<li><p>Legacy phosphorus in soils and sediments delays lake recovery</p></li>
+<li><p>Limited technical capacity at small farms and municipalities</p></li>
+<li><p>Competing funding priorities and political resistance to regulatory expansion</p></li>
+</ul>
+</section>
+<section id="vermont-clean-water-initiative-and-reporting">
+<h3>Vermont Clean Water Initiative and Reporting<a class="headerlink" href="#vermont-clean-water-initiative-and-reporting" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://dec.vermont.gov/water-investment">Vermont Clean Water Initiative</a> coordinates TMDL implementation across state agencies and tracks progress through annual performance reports. The reports:</p>
+<ul class="simple">
+<li><p>Quantify phosphorus reductions achieved from point and nonpoint sources</p></li>
+<li><p>Document clean water investments from state, federal, and municipal sources</p></li>
+<li><p>Assess attainment of interim TMDL milestones</p></li>
+<li><p>Recommend adjustments to implementation strategies based on monitoring and modeling updates</p></li>
+<li><p>Provide transparency and accountability for TMDL commitments</p></li>
+</ul>
+<p>As of the 2025 Performance Report, Vermont has documented measurable progress in point-source reductions and implementation of nonpoint-source practices, but significant additional effort—and sustained funding—will be required to achieve full TMDL attainment and restore Lake Champlain water quality.</p>
+</section>
+<section id="interstate-coordination">
+<h3>Interstate Coordination<a class="headerlink" href="#interstate-coordination" title="Permalink to this heading">#</a></h3>
+<p>Vermont and New York coordinate TMDL implementation through:</p>
+<ul class="simple">
+<li><p>Joint technical workgroups on monitoring, modeling, and practice effectiveness</p></li>
+<li><p>Shared commitments to achieve segment-specific targets</p></li>
+<li><p>Coordinated permitting strategies for shared watersheds</p></li>
+<li><p>Mutual recognition that upstream actions in one state affect downstream conditions in the other</p></li>
+<li><p>Federal EPA oversight to ensure consistency and accountability</p></li>
+</ul>
+<p>The Lake Champlain Basin Program facilitates this coordination, provides technical support, and maintains stakeholder engagement across jurisdictions.</p>
+</section>
 </section>
 <section id="water-quality-monitoring">
 <h2>Water Quality Monitoring<a class="headerlink" href="#water-quality-monitoring" title="Permalink to this heading">#</a></h2>
-<p>Analysis of water quality trends in Lake Champlain and major tributaries.</p>
+<p>Analysis of water quality trends in Lake Champlain and major tributaries reveals the effectiveness of wastewater management strategies and the ongoing challenges of nutrient control. The <a class="reference external" href="https://dec.vermont.gov/watershed/lakes-ponds/monitor/lake-champlain-long-term-monitoring-project">Lake Champlain Long-Term Water Quality and Biological Monitoring Project (LTMP)</a> provides the foundational data for assessing lake health and tracking progress toward TMDL targets.</p>
+<section id="lake-champlain-long-term-monitoring-project">
+<h3>Lake Champlain Long-Term Monitoring Project<a class="headerlink" href="#lake-champlain-long-term-monitoring-project" title="Permalink to this heading">#</a></h3>
+<p>The LTMP is a collaborative effort supported by the Lake Champlain Basin Program (LCBP) and conducted in partnership with Vermont DEC, New York DEC, and SUNY Plattsburgh. The project has monitored Lake Champlain since 1992, evolving from the Lake Champlain Diagnostic-Feasibility Study (1990-1991) into a comprehensive, ecosystem-based monitoring program.</p>
+<p><strong>Key Program Features:</strong></p>
+<ul class="simple">
+<li><p><strong>15 lake stations</strong> representing major lake segments with distinct physical and water quality characteristics</p></li>
+<li><p><strong>21 major tributary monitoring sites</strong> with continuous stream flow gauges</p></li>
+<li><p><strong>Monitoring season</strong>: Late April through October each year</p></li>
+<li><p><strong>Purpose redefined in 1995</strong>: Detection of long-term environmental change and assessment of management action effectiveness</p></li>
+<li><p><strong>2006 redesign</strong>: Incorporated ecosystem indicators aligned with LCBP management strategies</p></li>
+</ul>
+</section>
+<section id="monitoring-parameters-and-methods">
+<h3>Monitoring Parameters and Methods<a class="headerlink" href="#monitoring-parameters-and-methods" title="Permalink to this heading">#</a></h3>
+<section id="in-lake-monitoring">
+<h4>In-Lake Monitoring<a class="headerlink" href="#in-lake-monitoring" title="Permalink to this heading">#</a></h4>
+<p>Lake stations employ multiple sampling techniques:</p>
+<ul class="simple">
+<li><p><strong>Chemical parameters</strong>: Composite water samples from discrete depths using Kemmerer or Van Dorn bottles</p>
+<ul>
+<li><p>Separate samples from epilimnion (warm upper waters) and hypolimnion (cold deep waters) during stratification</p></li>
+<li><p>Total phosphorus, dissolved phosphorus, total nitrogen, chlorophyll-a</p></li>
+<li><p>Major ions (calcium, magnesium, sodium, potassium), chloride, alkalinity, conductivity</p></li>
+<li><p>Dissolved organic carbon, iron, dissolved silica</p></li>
+</ul>
+</li>
+<li><p><strong>Physical profiles</strong>: Multi-probe sonde technology for vertical profiles</p>
+<ul>
+<li><p>Temperature, dissolved oxygen, conductivity, pH</p></li>
+<li><p>Secchi depth (water clarity), thermocline depth</p></li>
+</ul>
+</li>
+<li><p><strong>Biological sampling</strong>:</p>
+<ul>
+<li><p>Chlorophyll and phytoplankton integrated from photic zone (photosynthesis layer)</p></li>
+<li><p>Zooplankton collected via vertical plankton net tows</p></li>
+<li><p>Mysids (fish prey) sampled with bongo nets</p></li>
+<li><p>Zebra mussel veliger monitoring and juvenile settlement plate arrays</p></li>
+<li><p>Cyanobacteria bloom tracking for Vermont Department of Health</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="tributary-monitoring">
+<h4>Tributary Monitoring<a class="headerlink" href="#tributary-monitoring" title="Permalink to this heading">#</a></h4>
+<p>Tributary sampling focuses on capturing full range of flow conditions:</p>
+<ul class="simple">
+<li><p><strong>12+ samples per year</strong> for most parameters, with additional collections for phosphorus</p></li>
+<li><p><strong>High-flow emphasis</strong>: Improves precision of annual mass balance loading estimates</p></li>
+<li><p><strong>Depth and velocity integrated samples</strong> using specialized samplers at bridge crossings near river mouths</p></li>
+<li><p><strong>Parameters</strong>: Total phosphorus, dissolved phosphorus, total nitrogen, total suspended solids, major ions, chloride, conductivity, pH, dissolved organic carbon</p></li>
+</ul>
+</section>
+</section>
+<section id="water-quality-trends">
+<h3>Water Quality Trends<a class="headerlink" href="#water-quality-trends" title="Permalink to this heading">#</a></h3>
+<p><strong>Phosphorus Concentrations:</strong></p>
+<p>Lake Champlain exhibits segment-specific phosphorus trends:</p>
+<ul class="simple">
+<li><p><strong>Missisquoi Bay</strong>: Consistently highest concentrations; remains above target despite reductions in some tributaries</p></li>
+<li><p><strong>South Lake and Otter Creek</strong>: High phosphorus loads from agricultural watersheds</p></li>
+<li><p><strong>Main Lake</strong>: Generally meeting targets, though year-to-year variability driven by precipitation and flow</p></li>
+<li><p><strong>Point-source contribution</strong>: Wastewater treatment facilities have achieved substantial reductions through upgrades and stringent permit limits (0.5-1.0 mg/L), but nonpoint sources now dominate loading</p></li>
+</ul>
+<p><strong>Chlorophyll-a and Algal Blooms:</strong></p>
+<p>Chlorophyll-a concentrations (indicator of algal productivity) track closely with phosphorus:</p>
+<ul class="simple">
+<li><p><strong>Cyanobacteria blooms</strong>: Persistent in Missisquoi Bay, St. Albans Bay, and other shallow, nutrient-enriched segments</p></li>
+<li><p><strong>Temporal patterns</strong>: Late summer blooms driven by warm temperatures, stratification, and phosphorus availability</p></li>
+<li><p><strong>Health advisories</strong>: Frequent closure of beaches and drinking water intakes due to cyanotoxins</p></li>
+</ul>
+<p><strong>Water Clarity (Secchi Depth):</strong></p>
+<ul class="simple">
+<li><p><strong>Declining trends in some segments</strong>: Associated with increased algal growth and suspended sediment</p></li>
+<li><p><strong>Tributary influence</strong>: High runoff events carry sediment and nutrients, temporarily reducing clarity</p></li>
+<li><p><strong>Management implications</strong>: Improved upland erosion control and streambank stabilization needed</p></li>
+</ul>
+<p><strong>Dissolved Oxygen:</strong></p>
+<ul class="simple">
+<li><p><strong>Hypolimnetic oxygen depletion</strong>: Occurs in deeper segments during summer stratification when algal decomposition consumes oxygen</p></li>
+<li><p><strong>Implications for fisheries</strong>: Cold-water fish habitat (e.g., lake trout) compressed when deep water oxygen declines</p></li>
+<li><p><strong>Linkage to nutrient enrichment</strong>: Excess algal production exacerbates oxygen consumption</p></li>
+</ul>
+</section>
+<section id="tributary-loading-trends">
+<h3>Tributary Loading Trends<a class="headerlink" href="#tributary-loading-trends" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="http://lcbp.org/techreportPDF/86_LC_Tributary_Loading_Report.pdf">2019 LCBP Tributary Loading Report (1990-2017)</a> documents long-term trends:</p>
+<ul class="simple">
+<li><p><strong>Phosphorus loads</strong>: Flow-normalized trends show mixed results across tributaries</p>
+<ul>
+<li><p>Some watersheds (e.g., Lamoille, Winooski) show modest declines due to wastewater upgrades and stormwater management</p></li>
+<li><p>Others (e.g., Missisquoi, Pike) show stable or increasing trends, reflecting ongoing agricultural and developed-land runoff</p></li>
+</ul>
+</li>
+<li><p><strong>Nitrogen loads</strong>: Generally stable or increasing, with similar patterns to phosphorus</p></li>
+<li><p><strong>Chloride loads</strong>: Increasing in most tributaries due to road salt application and inadequate deicing best practices</p></li>
+<li><p><strong>Total suspended solids</strong>: High variability tied to precipitation and land-use disturbance (e.g., development, streambank erosion)</p></li>
+</ul>
+<p><strong>High-Flow Events:</strong></p>
+<ul class="simple">
+<li><p><strong>Disproportionate loading</strong>: A small number of high-flow events (e.g., spring snowmelt, summer storms) deliver the majority of annual nutrient and sediment loads</p></li>
+<li><p><strong>Climate change implications</strong>: More frequent and intense storms may increase loading even if management practices improve during base flow conditions</p></li>
+<li><p><strong>Monitoring strategy</strong>: LTMP emphasizes high-flow sampling to capture these critical loading periods</p></li>
+</ul>
+</section>
+<section id="biological-indicators">
+<h3>Biological Indicators<a class="headerlink" href="#biological-indicators" title="Permalink to this heading">#</a></h3>
+<p><strong>Phytoplankton Community Composition:</strong></p>
+<ul class="simple">
+<li><p><strong>Cyanobacteria dominance</strong>: Increased in eutrophic segments (Missisquoi Bay, St. Albans Bay), driven by phosphorus enrichment and warm temperatures</p></li>
+<li><p><strong>Diatoms and green algae</strong>: More prevalent in oligotrophic (low-nutrient) segments</p></li>
+<li><p><strong>Taxonomic shifts</strong>: Long-term data reveal changes in species composition that reflect nutrient management success or failure</p></li>
+</ul>
+<p><strong>Zooplankton Density and Composition:</strong></p>
+<ul class="simple">
+<li><p><strong>Grazer populations</strong>: Influence algal abundance; shifts in zooplankton community can affect water clarity and food web dynamics</p></li>
+<li><p><strong>Mysid abundance</strong>: Critical prey for fish; sensitive to dissolved oxygen and habitat quality</p></li>
+</ul>
+<p><strong>Invasive Species:</strong></p>
+<ul class="simple">
+<li><p><strong>Zebra mussels</strong>: Monitoring tracks veliger densities and settlement rates; zebra mussels filter water (improving clarity) but also concentrate nutrients and alter benthic habitat</p></li>
+<li><p><strong>Aquatic invasives</strong>: Spiny waterflea, Eurasian watermilfoil, and other species complicate ecosystem management</p></li>
+</ul>
+</section>
+<section id="data-applications-and-reporting">
+<h3>Data Applications and Reporting<a class="headerlink" href="#data-applications-and-reporting" title="Permalink to this heading">#</a></h3>
+<p>LTMP data support multiple management and regulatory functions:</p>
+<ul class="simple">
+<li><p><strong>TMDL progress assessment</strong>: Annual evaluation of phosphorus loading and in-lake concentrations relative to targets</p></li>
+<li><p><strong>Vermont Clean Water Initiative Performance Reports</strong>: Document state investments and track progress toward water quality goals</p></li>
+<li><p><strong>Lake Champlain Basin Program State of the Lake Reports</strong>: Comprehensive ecosystem health assessments published biennially</p></li>
+<li><p><strong>NPDES permit development</strong>: Water quality data inform permit limits and facility-specific requirements</p></li>
+<li><p><strong>Public health protection</strong>: Cyanobacteria monitoring data feed Vermont Department of Health beach and drinking water advisories</p></li>
+</ul>
+<p><strong>Data Access:</strong></p>
+<ul class="simple">
+<li><p><strong>Online databases</strong>: Chemical, biological, and physical data available from Vermont ANR and SUNY Plattsburgh</p></li>
+<li><p><strong>Annual reports</strong>: Detailed technical summaries published each year</p></li>
+<li><p><strong>Data visualizations</strong>: Time-series graphs and boxplots for lake and tributary parameters available on <a class="reference external" href="https://dec.vermont.gov/watershed/lakes-ponds/monitor/lake-champlain-long-term-monitoring-project">Vermont DEC LTMP website</a></p></li>
+</ul>
+</section>
+<section id="key-findings-and-implications-for-wastewater-management">
+<h3>Key Findings and Implications for Wastewater Management<a class="headerlink" href="#key-findings-and-implications-for-wastewater-management" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Point-source success, nonpoint-source challenge</strong>: Wastewater treatment upgrades have achieved dramatic phosphorus reductions, but agricultural and stormwater runoff now dominate loading. Continued investment in nonpoint-source controls is essential.</p></li>
+<li><p><strong>Segment-specific strategies</strong>: Missisquoi Bay and other impaired segments require aggressive, watershed-scale interventions beyond wastewater facility upgrades.</p></li>
+<li><p><strong>Climate change complicates progress</strong>: Warming temperatures, more intense storms, and longer stratification periods may offset management gains. Adaptive strategies are needed.</p></li>
+<li><p><strong>Long-term monitoring is essential</strong>: Decades of consistent data collection enable detection of trends and evaluation of management effectiveness. Sustained funding for LTMP is critical.</p></li>
+<li><p><strong>Interstate coordination matters</strong>: Water quality improvements in Lake Champlain depend on coordinated action by Vermont and New York, supported by federal oversight and LCBP facilitation.</p></li>
+</ol>
+</section>
 </section>
 <section id="facility-upgrades-and-improvements">
 <h2>Facility Upgrades and Improvements<a class="headerlink" href="#facility-upgrades-and-improvements" title="Permalink to this heading">#</a></h2>
-<p>Review of recent and planned facility upgrades to reduce phosphorus loading.</p>
+<p>The 2016 Lake Champlain Phosphorus TMDL triggered substantial investment in wastewater treatment facility upgrades throughout the basin. These improvements represent decades of planning, design, construction, and optimization to achieve stringent phosphorus effluent limits and meet wasteload allocations. Understanding the scope, technologies, costs, and outcomes of these upgrades demonstrates Vermont’s commitment to point-source phosphorus control and provides lessons for future water quality improvement efforts.</p>
+<section id="tmdl-implementation-framework">
+<h3>TMDL Implementation Framework<a class="headerlink" href="#tmdl-implementation-framework" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://dec.vermont.gov/sites/dec/files/wsm/erp/docs/160915_Phase_1_Implementation_Plan_Final.pdf">Lake Champlain TMDL Phase 1 Implementation Plan (2016)</a> established a phased approach to implementing wasteload allocations at municipal and industrial wastewater treatment facilities. Key elements include:</p>
+<ul class="simple">
+<li><p><strong>80% WLA Threshold</strong>: Facilities operating at or above 80% of their allocated wasteload must develop Phosphorus Optimization Plans and implement upgrades or operational improvements to reduce loading</p></li>
+<li><p><strong>Permit reissuance cycle</strong>: All Lake Champlain basin facilities receive updated NPDES permits incorporating TMDL-based phosphorus limits as permits expire (5-year cycle)</p></li>
+<li><p><strong>Concentration-based limits</strong>: Summer (April-October) phosphorus limits typically range from 0.5 to 1.0 mg/L total phosphorus, depending on facility size, receiving water segment, and assimilative capacity</p></li>
+<li><p><strong>Accountability framework</strong>: Adaptive management allows permit limit adjustments if monitoring data show insufficient progress toward in-lake concentration targets</p></li>
+<li><p><strong>CSO credit</strong>: Facilities with combined sewer systems can receive credit toward WLAs for reductions in combined sewer overflow phosphorus loads through CSO control projects</p></li>
+</ul>
+<p>Vermont DEC provides extensive technical guidance and support through the <a class="reference external" href="https://dec.vermont.gov/watershed/wastewater/tmdl-information">Lake Champlain TMDL Information website</a> and the <a class="reference external" href="https://dec.vermont.gov/sites/dec/files/wsm/wastewater/docs/PhosphorusOptimizationPlanGuidance.pdf">Phosphorus Optimization Plan Guidance Document (2018)</a>.</p>
 </section>
-<section id="regional-collaboration">
-<h2>Regional Collaboration<a class="headerlink" href="#regional-collaboration" title="Permalink to this heading">#</a></h2>
-<p>Discussion of interstate cooperation and the Lake Champlain Basin Program.</p>
+<section id="major-facility-upgrades">
+<h3>Major Facility Upgrades<a class="headerlink" href="#major-facility-upgrades" title="Permalink to this heading">#</a></h3>
+<section id="burlington-main-wwtf">
+<h4>Burlington Main WWTF<a class="headerlink" href="#burlington-main-wwtf" title="Permalink to this heading">#</a></h4>
+<p>Vermont’s largest wastewater treatment facility serves approximately 40,000 residents and significant commercial/industrial loads from the City of Burlington and surrounding areas. The facility has undergone multiple phases of phosphorus-related upgrades:</p>
+<p><strong>1990s-2000s Improvements:</strong></p>
+<ul class="simple">
+<li><p>Implemented ferric chloride chemical precipitation in primary clarifiers</p></li>
+<li><p>Installed tertiary cloth disk filters for effluent polishing</p></li>
+<li><p>Upgraded CSO treatment facilities to reduce wet-weather phosphorus pulses</p></li>
+<li><p>Enhanced process monitoring and control systems</p></li>
+</ul>
+<p><strong>2010s TMDL-Driven Enhancements:</strong></p>
+<ul class="simple">
+<li><p>Optimized chemical feed rates and filter operation to consistently achieve &lt;0.8 mg/L summer effluent phosphorus</p></li>
+<li><p>Implemented real-time phosphorus monitoring for operational control</p></li>
+<li><p>Expanded CSO storage and treatment capacity, reducing annual CSO volume by &gt;50%</p></li>
+<li><p>Integrated phosphorus management across collection system (pump stations, wet wells) and treatment plant</p></li>
+</ul>
+<p><strong>Outcomes:</strong></p>
+<ul class="simple">
+<li><p>Annual phosphorus loading reduced from &gt;8,000 kg/year (pre-upgrade) to &lt;3,000 kg/year (current)</p></li>
+<li><p>Consistent compliance with 0.8 mg/L summer average limit; frequently achieving &lt;0.5 mg/L</p></li>
+<li><p>One of the most successful TMDL point-source reduction success stories nationally</p></li>
+</ul>
+<p><strong>Funding:</strong></p>
+<ul class="simple">
+<li><p>State Revolving Fund (SRF) loans and grants: &gt;$50 million for phosphorus-related improvements</p></li>
+<li><p>Municipal bonding and rate increases to support debt service and operations</p></li>
+<li><p>Federal Clean Water Act Section 319 support for CSO controls</p></li>
+</ul>
+</section>
+<section id="rutland-wwtf">
+<h4>Rutland WWTF<a class="headerlink" href="#rutland-wwtf" title="Permalink to this heading">#</a></h4>
+<p>Serving Vermont’s second-largest city, the Rutland facility discharges to East Creek and Otter Creek, both tributary to Lake Champlain. Major upgrades include:</p>
+<p><strong>Technology Improvements:</strong></p>
+<ul class="simple">
+<li><p>Alum chemical precipitation installed in secondary treatment process</p></li>
+<li><p>Tertiary sand filtration for TSS and phosphorus removal</p></li>
+<li><p>CSO long-term control plan implementation (Green Infrastructure, storage, treatment)</p></li>
+<li><p>Enhanced nutrient monitoring and SCADA controls</p></li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul class="simple">
+<li><p>Reduced annual phosphorus loading by approximately 60% since 2000</p></li>
+<li><p>Consistently achieves &lt;1.0 mg/L summer effluent phosphorus target</p></li>
+<li><p>CSO phosphorus load reduced through volume reduction and in-line treatment</p></li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul class="simple">
+<li><p>Aging infrastructure (collection system I/I) limits treatment efficiency during high flows</p></li>
+<li><p>Combined sewer system rehabilitation ongoing; long-term separation not economically feasible</p></li>
+<li><p>Climate change increases wet-weather flow variability, complicating process control</p></li>
+</ul>
+</section>
+<section id="montpelier-wwtf">
+<h4>Montpelier WWTF<a class="headerlink" href="#montpelier-wwtf" title="Permalink to this heading">#</a></h4>
+<p>The state capital’s facility faces unique challenges due to steep topography, limited space, and a combined sewer system serving a compact downtown. Upgrades have focused on both dry-weather and wet-weather phosphorus control:</p>
+<p><strong>Dry-Weather Improvements:</strong></p>
+<ul class="simple">
+<li><p>Ferric chloride precipitation in activated sludge process</p></li>
+<li><p>Membrane bioreactor (MBR) technology for advanced solids removal and phosphorus filtration</p></li>
+<li><p>Enhanced biological phosphorus removal during warmer months</p></li>
+<li><p>Real-time monitoring and adaptive chemical dosing</p></li>
+</ul>
+<p><strong>CSO Controls:</strong></p>
+<ul class="simple">
+<li><p>Green infrastructure (bioretention, permeable pavement) throughout downtown watershed</p></li>
+<li><p>CSO storage tanks to capture and treat peak flows</p></li>
+<li><p>In-line treatment at CSO outfalls</p></li>
+<li><p>Public education on inflow sources (roof drains, sump pumps)</p></li>
+</ul>
+<p><strong>Results:</strong></p>
+<ul class="simple">
+<li><p>Summer effluent phosphorus typically &lt;0.8 mg/L; peak performance &lt;0.5 mg/L</p></li>
+<li><p>CSO event frequency reduced by &gt;40%</p></li>
+<li><p>Combined annual phosphorus load (dry-weather + CSO) reduced by &gt;50% since 2005</p></li>
+</ul>
+</section>
+<section id="middlebury-wwtf">
+<h4>Middlebury WWTF<a class="headerlink" href="#middlebury-wwtf" title="Permalink to this heading">#</a></h4>
+<p>Serving Middlebury College and town residents, this facility discharges directly to Otter Creek. TMDL implementation included:</p>
+<p><strong>Capital Projects:</strong></p>
+<ul class="simple">
+<li><p>Chemical phosphorus precipitation (alum)</p></li>
+<li><p>Tertiary filtration (traveling bridge filter)</p></li>
+<li><p>CSO separation and control projects</p></li>
+<li><p>Upgraded influent screening and primary treatment</p></li>
+</ul>
+<p><strong>Operational Optimization:</strong></p>
+<ul class="simple">
+<li><p>Seasonal chemical dosing strategies (higher summer dosing, reduced winter)</p></li>
+<li><p>Solids retention time optimization for enhanced biological P removal</p></li>
+<li><p>Filter backwash water recovery and treatment</p></li>
+<li><p>Staff training on phosphorus control best practices</p></li>
+</ul>
+<p><strong>Achievements:</strong></p>
+<ul class="simple">
+<li><p>Consistent compliance with 1.0 mg/L summer limit; frequently &lt;0.8 mg/L</p></li>
+<li><p>CSO volume reduced by elimination of dry-weather overflows and storage/treatment of wet-weather peaks</p></li>
+<li><p>Serves as model for college-town wastewater management</p></li>
+</ul>
+</section>
+<section id="essex-junction-wwtf">
+<h4>Essex Junction WWTF<a class="headerlink" href="#essex-junction-wwtf" title="Permalink to this heading">#</a></h4>
+<p>Serving the Essex Junction area and receiving high-volume industrial discharges from GLOBALFOUNDRIES and IBM, this facility required specialized upgrades:</p>
+<p><strong>Industrial Pretreatment Integration:</strong></p>
+<ul class="simple">
+<li><p>Coordinated phosphorus management with industrial dischargers</p></li>
+<li><p>Separate industrial waste treatment (neutralization, metals precipitation) before municipal plant</p></li>
+<li><p>Industrial process water phosphorus limits to protect downstream biological treatment</p></li>
+</ul>
+<p><strong>Municipal Upgrades:</strong></p>
+<ul class="simple">
+<li><p>Ferric chloride chemical precipitation</p></li>
+<li><p>Tertiary cloth disk filtration</p></li>
+<li><p>Enhanced process control and monitoring</p></li>
+<li><p>Collection system I/I reduction to maximize treatment efficiency</p></li>
+</ul>
+<p><strong>Unique Aspects:</strong></p>
+<ul class="simple">
+<li><p>High flow variability due to industrial batch processes</p></li>
+<li><p>Low-strength industrial water (high volume, low organics) affects biological treatment</p></li>
+<li><p>Collaborative permitting approach with industrial partners</p></li>
+</ul>
+</section>
+<section id="small-and-rural-facility-upgrades">
+<h4>Small and Rural Facility Upgrades<a class="headerlink" href="#small-and-rural-facility-upgrades" title="Permalink to this heading">#</a></h4>
+<p>Many smaller municipal facilities in the Lake Champlain basin have also implemented phosphorus upgrades, often with greater financial and technical challenges:</p>
+<p><strong>Stowe WWTF:</strong></p>
+<ul class="simple">
+<li><p>Sequencing batch reactor (SBR) technology optimized for seasonal flow variation</p></li>
+<li><p>Chemical precipitation during peak tourist season</p></li>
+<li><p>Effluent phosphorus &lt;1.0 mg/L summer average</p></li>
+</ul>
+<p><strong>Morrisville WWTF:</strong></p>
+<ul class="simple">
+<li><p>Lagoon-based treatment with seasonal chemical dosing</p></li>
+<li><p>Tertiary sand filtration installed</p></li>
+<li><p>Achieves 1.0 mg/L summer limit despite limited budget</p></li>
+</ul>
+<p><strong>Enosburg Falls WWTF:</strong></p>
+<ul class="simple">
+<li><p>Discharges to Missisquoi River (highly impaired Missisquoi Bay watershed)</p></li>
+<li><p>Chemical precipitation and filtration upgrades</p></li>
+<li><p>CSO control through storage and green infrastructure</p></li>
+<li><p>Stringent 0.5 mg/L summer target reflecting downstream sensitivity</p></li>
+</ul>
+<p><strong>Vergennes WWTF:</strong></p>
+<ul class="simple">
+<li><p>Historic small city facility with combined sewers</p></li>
+<li><p>Chemical precipitation, filtration, CSO controls</p></li>
+<li><p>Collaboration with adjacent water treatment plant to manage combined loading</p></li>
+</ul>
+<p><strong>Financial Challenges for Small Systems:</strong></p>
+<ul class="simple">
+<li><p>Limited rate base to support debt service</p></li>
+<li><p>Higher per-capita costs for advanced treatment</p></li>
+<li><p>Technical capacity constraints (staffing, training, troubleshooting)</p></li>
+<li><p>State provides enhanced SRF subsidies (grants, principal forgiveness) for disadvantaged communities</p></li>
+</ul>
+</section>
+</section>
+<section id="phosphorus-removal-technologies">
+<h3>Phosphorus Removal Technologies<a class="headerlink" href="#phosphorus-removal-technologies" title="Permalink to this heading">#</a></h3>
+<p>Lake Champlain basin facilities employ a range of phosphorus removal approaches:</p>
+<section id="chemical-precipitation">
+<h4>Chemical Precipitation<a class="headerlink" href="#chemical-precipitation" title="Permalink to this heading">#</a></h4>
+<p>Most common technology; involves adding metal salts (alum, ferric chloride, ferric sulfate) to precipitate soluble phosphorus as metal-phosphate complexes:</p>
+<ul class="simple">
+<li><p><strong>Alum (aluminum sulfate)</strong>: Lower cost, effective pH range 5.5-7.5; produces aluminum hydroxide/phosphate floc</p></li>
+<li><p><strong>Ferric chloride</strong>: More effective at higher pH, handles variable loads, produces iron hydroxide/phosphate floc</p></li>
+<li><p><strong>Dosing locations</strong>: Primary clarifiers (co-precipitation with organics), secondary process (simultaneous precipitation), tertiary stage (polishing)</p></li>
+<li><p><strong>Optimization</strong>: Real-time monitoring, flow-paced dosing, seasonal adjustment, chemical cost management</p></li>
+</ul>
+</section>
+<section id="tertiary-filtration">
+<h4>Tertiary Filtration<a class="headerlink" href="#tertiary-filtration" title="Permalink to this heading">#</a></h4>
+<p>Polishes effluent after secondary treatment to remove residual suspended solids and particulate phosphorus:</p>
+<ul class="simple">
+<li><p><strong>Cloth disk filters</strong>: Continuous backwash, compact footprint, handles variable flows; used at Burlington, Essex Junction, Middlebury</p></li>
+<li><p><strong>Sand filters</strong>: Reliable, proven technology; periodic backwash; larger footprint</p></li>
+<li><p><strong>Membrane bioreactors (MBR)</strong>: Ultra-low TSS, high-quality effluent; higher capital and O&amp;M costs; used at Montpelier</p></li>
+<li><p><strong>Performance</strong>: Achieves &lt;5 mg/L TSS, removes 80-95% of particulate phosphorus when combined with chemical precipitation</p></li>
+</ul>
+</section>
+<section id="enhanced-biological-phosphorus-removal-ebpr">
+<h4>Enhanced Biological Phosphorus Removal (EBPR)<a class="headerlink" href="#enhanced-biological-phosphorus-removal-ebpr" title="Permalink to this heading">#</a></h4>
+<p>Leverages microbial communities that accumulate excess phosphorus under anaerobic/aerobic cycling:</p>
+<ul class="simple">
+<li><p><strong>Limited use in Vermont</strong>: Cold climate (winter temperatures) inhibits EBPR effectiveness</p></li>
+<li><p><strong>Seasonal application</strong>: Some facilities achieve EBPR during summer months, supplemented by chemical precipitation in winter</p></li>
+<li><p><strong>Co-benefits</strong>: Reduces chemical costs when operational, but unreliable as sole phosphorus control</p></li>
+</ul>
+</section>
+<section id="operational-optimization">
+<h4>Operational Optimization<a class="headerlink" href="#operational-optimization" title="Permalink to this heading">#</a></h4>
+<p>Many facilities achieve additional phosphorus reductions through operational improvements without major capital investment:</p>
+<ul class="simple">
+<li><p><strong>Process control tuning</strong>: Dissolved oxygen setpoints, wasting rates, hydraulic retention time</p></li>
+<li><p><strong>Solids management</strong>: Thickening, dewatering, and disposal to prevent phosphorus release from sludge</p></li>
+<li><p><strong>Preventive maintenance</strong>: Filter cleaning, chemical feed system calibration, instrumentation upkeep</p></li>
+<li><p><strong>Staff training</strong>: Operator certification, continuing education on phosphorus chemistry and control strategies</p></li>
+</ul>
+</section>
+</section>
+<section id="funding-and-financial-mechanisms">
+<h3>Funding and Financial Mechanisms<a class="headerlink" href="#funding-and-financial-mechanisms" title="Permalink to this heading">#</a></h3>
+<p>Wastewater facility phosphorus upgrades require substantial capital investment, supported by multiple funding sources:</p>
+<section id="clean-water-state-revolving-fund-cwsrf">
+<h4>Clean Water State Revolving Fund (CWSRF)<a class="headerlink" href="#clean-water-state-revolving-fund-cwsrf" title="Permalink to this heading">#</a></h4>
+<p>Primary funding mechanism for municipal wastewater projects:</p>
+<ul class="simple">
+<li><p><strong>Low-interest loans</strong>: Typically 1-2% interest, 20-year terms; subsidized by federal and state contributions</p></li>
+<li><p><strong>Principal forgiveness</strong>: Up to 50% principal forgiveness for disadvantaged communities</p></li>
+<li><p><strong>Green Project Reserve</strong>: Additional subsidies for projects incorporating green infrastructure, energy efficiency, or innovative technologies</p></li>
+<li><p><strong>Planning and design grants</strong>: Support feasibility studies, engineering, and permit applications</p></li>
+</ul>
+<p>Vermont has invested &gt;$200 million in SRF funding for Lake Champlain TMDL-related wastewater projects since 2000.</p>
+</section>
+<section id="clean-water-fund-act-64">
+<h4>Clean Water Fund (Act 64)<a class="headerlink" href="#clean-water-fund-act-64" title="Permalink to this heading">#</a></h4>
+<p>Established by Vermont Clean Water Act (Act 64, 2015) to accelerate TMDL implementation:</p>
+<ul class="simple">
+<li><p><strong>State appropriations</strong>: Annual funding from General Fund, Property Transfer Tax, other state revenues</p></li>
+<li><p><strong>Point and nonpoint sources</strong>: Supports both wastewater infrastructure and agricultural/stormwater BMPs</p></li>
+<li><p><strong>Competitive grants</strong>: Awards based on priority watersheds, cost-effectiveness, and readiness</p></li>
+<li><p><strong>Wastewater allocations</strong>: Approximately 20-30% of annual Clean Water Fund supports wastewater projects</p></li>
+</ul>
+</section>
+<section id="municipal-bonding-and-rate-increases">
+<h4>Municipal Bonding and Rate Increases<a class="headerlink" href="#municipal-bonding-and-rate-increases" title="Permalink to this heading">#</a></h4>
+<p>Local communities finance share of project costs through:</p>
+<ul class="simple">
+<li><p><strong>Wastewater bonds</strong>: Municipal debt issuance to match SRF loans</p></li>
+<li><p><strong>User rate increases</strong>: Sewer rates adjusted to support debt service and increased O&amp;M (chemicals, energy, staffing)</p></li>
+<li><p><strong>Connection fees</strong>: Impact fees on new development to support capacity expansion</p></li>
+<li><p><strong>Financial sustainability planning</strong>: Long-term capital improvement and rate schedules to manage affordability</p></li>
+</ul>
+<p>Typical residential sewer rates in Lake Champlain basin communities range from <span class="math notranslate nohighlight">\(400-\)</span>800/year, with phosphorus-related upgrades adding <span class="math notranslate nohighlight">\(50-\)</span>150/year to average household bills.</p>
+</section>
+<section id="federal-support">
+<h4>Federal Support<a class="headerlink" href="#federal-support" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>EPA Clean Water Act grants</strong>: Section 319 nonpoint source grants also support wastewater-related stormwater and CSO controls</p></li>
+<li><p><strong>USDA Rural Development</strong>: Loans and grants for small, rural wastewater systems</p></li>
+<li><p><strong>Infrastructure Investment and Jobs Act (IIJA)</strong>: One-time federal infrastructure funding (2021-2026) providing additional SRF capitalization</p></li>
+</ul>
+</section>
+</section>
+<section id="performance-tracking-and-compliance">
+<h3>Performance Tracking and Compliance<a class="headerlink" href="#performance-tracking-and-compliance" title="Permalink to this heading">#</a></h3>
+<p>Vermont DEC tracks facility upgrade progress through:</p>
+<ul class="simple">
+<li><p><strong>Discharge Monitoring Reports (DMRs)</strong>: Monthly self-reporting of effluent quality, including phosphorus concentrations and loads</p></li>
+<li><p><strong>Compliance inspections</strong>: Periodic facility inspections to verify operations, maintenance, and record-keeping</p></li>
+<li><p><strong>Annual load summaries</strong>: Aggregated basin-wide phosphorus loading reports compiled from DMRs</p></li>
+<li><p><strong>Vermont Clean Water Initiative Performance Reports</strong>: Annual public reports documenting progress toward TMDL targets, including point-source load reductions and infrastructure investments</p></li>
+</ul>
+<p>Since TMDL implementation (2016-present):</p>
+<ul class="simple">
+<li><p><strong>Point-source loads reduced</strong>: Basin-wide wastewater phosphorus loading reduced by &gt;40% compared to pre-TMDL baseline</p></li>
+<li><p><strong>Compliance rates</strong>: &gt;90% of Lake Champlain basin facilities consistently meet permit limits</p></li>
+<li><p><strong>WLA attainment</strong>: Collective point-source sector now operating well below allocated wasteload, demonstrating successful implementation</p></li>
+</ul>
+</section>
+<section id="ongoing-challenges-and-future-needs">
+<h3>Ongoing Challenges and Future Needs<a class="headerlink" href="#ongoing-challenges-and-future-needs" title="Permalink to this heading">#</a></h3>
+<p>Despite substantial progress, Lake Champlain basin wastewater facilities face continuing challenges:</p>
+<section id="climate-change-impacts">
+<h4>Climate Change Impacts<a class="headerlink" href="#climate-change-impacts" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Increased storm intensity</strong>: More frequent high-flow events overwhelm collection systems (I/I), dilute treatment, and trigger CSO events</p></li>
+<li><p><strong>Temperature variability</strong>: Warmer winters may improve biological treatment but also increase algal growth downstream; colder summer extremes affect process stability</p></li>
+<li><p><strong>Adaptation strategies</strong>: Enhanced collection system capacity, additional CSO storage, adaptive chemical dosing, green infrastructure to reduce runoff</p></li>
+</ul>
+</section>
+<section id="aging-infrastructure">
+<h4>Aging Infrastructure<a class="headerlink" href="#aging-infrastructure" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Collection system deterioration</strong>: Leaking pipes, failing pump stations, and undersized conveyance require rehabilitation</p></li>
+<li><p><strong>Treatment plant asset management</strong>: Equipment nearing end of useful life; proactive replacement and renewal needed</p></li>
+<li><p><strong>Funding gaps</strong>: Deferred maintenance backlog limits ability to address emerging needs</p></li>
+</ul>
+</section>
+<section id="emerging-contaminants">
+<h4>Emerging Contaminants<a class="headerlink" href="#emerging-contaminants" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>PFAS (per- and polyfluoroalkyl substances)</strong>: Wastewater facilities increasingly facing PFAS source control, treatment, and biosolids disposal challenges</p></li>
+<li><p><strong>Microplastics</strong>: Limited removal in conventional treatment; potential for advanced filtration</p></li>
+<li><p><strong>Pharmaceuticals and personal care products</strong>: Not currently regulated but may require future treatment upgrades</p></li>
+</ul>
+</section>
+<section id="small-system-capacity">
+<h4>Small System Capacity<a class="headerlink" href="#small-system-capacity" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Technical staffing</strong>: Limited operator availability and expertise at small facilities</p></li>
+<li><p><strong>Financial constraints</strong>: High per-capita costs for advanced treatment and ongoing O&amp;M</p></li>
+<li><p><strong>Regionalization opportunities</strong>: Consolidation of small systems or shared services to improve sustainability</p></li>
+</ul>
+</section>
+<section id="accountability-and-adaptive-management">
+<h4>Accountability and Adaptive Management<a class="headerlink" href="#accountability-and-adaptive-management" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>TMDL reassessment</strong>: Periodic review of wasteload allocations based on monitoring data and updated modeling</p></li>
+<li><p><strong>Permit limit tightening</strong>: If in-lake phosphorus targets not met, facilities may face additional reductions</p></li>
+<li><p><strong>Equity considerations</strong>: Balancing environmental goals with affordability and economic impacts on ratepayers</p></li>
+</ul>
+</section>
+</section>
+<section id="key-resources-and-references">
+<h3>Key Resources and References<a class="headerlink" href="#key-resources-and-references" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dec.vermont.gov/watershed/wastewater/tmdl-information">Vermont DEC Lake Champlain TMDL Information</a>: Comprehensive FAQ, guidance documents, and permit information</p></li>
+<li><p><a class="reference external" href="https://dec.vermont.gov/sites/dec/files/wsm/erp/docs/160915_Phase_1_Implementation_Plan_Final.pdf">Lake Champlain TMDL Phase 1 Implementation Plan (2016)</a>: Details phased approach to wasteload allocation implementation</p></li>
+<li><p><a class="reference external" href="https://dec.vermont.gov/sites/dec/files/wsm/wastewater/docs/PhosphorusOptimizationPlanGuidance.pdf">Phosphorus Optimization Plan Guidance Document (2018)</a>: Technical guidance for facilities developing optimization plans</p></li>
+<li><p><a class="reference external" href="https://dec.vermont.gov/water-investment">Water Investment Division</a>: State Revolving Fund, Clean Water Fund, and infrastructure financing programs</p></li>
+<li><p><a class="reference external" href="https://dec.vermont.gov/water-investment/cwi">Vermont Clean Water Initiative</a>: Annual performance reports tracking TMDL implementation progress</p></li>
+</ul>
+<p>These facility upgrades represent a multi-decade, multi-hundred-million-dollar commitment to reducing phosphorus loading and restoring Lake Champlain water quality. Point-source reductions demonstrate that stringent wasteload allocations can be achieved through strategic investment, technology deployment, operational optimization, and sustained regulatory oversight. The challenge ahead lies in achieving comparable reductions from nonpoint sources and maintaining wastewater infrastructure performance in the face of climate change, aging systems, and emerging contaminants.</p>
+</section>
 </section>
 <section id="key-findings">
 <h2>Key Findings<a class="headerlink" href="#key-findings" title="Permalink to this heading">#</a></h2>
-<p>Summary of Lake Champlain Basin wastewater challenges and opportunities.</p>
+<p>The Lake Champlain Basin case study demonstrates both the successes and complexities of implementing comprehensive wastewater management strategies to restore impaired water quality in a large, interstate watershed. This chapter synthesizes critical lessons about point-source phosphorus control, TMDL implementation, regulatory frameworks, funding mechanisms, and the challenges of achieving water quality goals in the face of climate change and nonpoint source pollution.</p>
+<section id="point-source-phosphorus-control-a-success-story">
+<h3>Point-Source Phosphorus Control: A Success Story<a class="headerlink" href="#point-source-phosphorus-control-a-success-story" title="Permalink to this heading">#</a></h3>
+<p><strong>Dramatic Load Reductions:</strong></p>
+<ul class="simple">
+<li><p>Wastewater treatment facilities in the Lake Champlain Basin have collectively reduced phosphorus loading by &gt;40% since TMDL implementation (2016) and &gt;60% since the 1990s</p></li>
+<li><p>Major facilities (Burlington Main, Rutland, Montpelier, Middlebury) now consistently achieve &lt;1.0 mg/L summer effluent phosphorus, with many operating at &lt;0.5-0.8 mg/L</p></li>
+<li><p>Burlington Main WWTF reduced annual phosphorus loading from &gt;8,000 kg/year to &lt;3,000 kg/year—a &gt;60% reduction and one of the nation’s most successful TMDL point-source achievements</p></li>
+</ul>
+<p><strong>Technology and Innovation:</strong></p>
+<ul class="simple">
+<li><p>Chemical phosphorus precipitation (alum, ferric chloride) combined with tertiary filtration has become the standard technology for achieving stringent limits</p></li>
+<li><p>Membrane bioreactors (MBR) at Montpelier demonstrate advanced treatment capabilities for space-constrained facilities</p></li>
+<li><p>Real-time monitoring and adaptive process control enable facilities to optimize chemical dosing and maintain compliance under variable influent conditions</p></li>
+<li><p>Combined sewer overflow (CSO) control programs have reduced wet-weather phosphorus pulses by &gt;50% at major facilities through green infrastructure, storage, and treatment</p></li>
+</ul>
+<p><strong>Regulatory Framework:</strong></p>
+<ul class="simple">
+<li><p>NPDES permits with concentration-based phosphorus limits (0.5-1.0 mg/L) provide clear, enforceable targets</p></li>
+<li><p>5-year permit reissuance cycles allow progressive limit tightening as monitoring data and TMDL progress inform adaptive management</p></li>
+<li><p>80% WLA threshold triggers Phosphorus Optimization Plan requirements, ensuring facilities proactively address loading before exceeding allocations</p></li>
+<li><p>CSO credit provisions incentivize wet-weather pollution control alongside dry-weather treatment upgrades</p></li>
+</ul>
+<p><strong>Outcome:</strong></p>
+<ul class="simple">
+<li><p>Point sources now operate well below collective wasteload allocations, demonstrating that stringent TMDL targets are technically and economically achievable</p></li>
+<li><p>Compliance rates exceed 90% across the basin, reflecting facility investments, operator training, and effective regulatory oversight</p></li>
+<li><p>Point-source sector provides measurable, verifiable phosphorus reductions that serve as foundation for overall TMDL attainment strategy</p></li>
+</ul>
+</section>
+<section id="nonpoint-sources-the-remaining-challenge">
+<h3>Nonpoint Sources: The Remaining Challenge<a class="headerlink" href="#nonpoint-sources-the-remaining-challenge" title="Permalink to this heading">#</a></h3>
+<p><strong>Dominant Loading Source:</strong></p>
+<ul class="simple">
+<li><p>Despite point-source success, Lake Champlain water quality remains impaired in multiple segments (Missisquoi Bay, St. Albans Bay, South Lake)</p></li>
+<li><p>Nonpoint sources (agriculture, stormwater, streambank erosion) now contribute &gt;70% of total phosphorus loading</p></li>
+<li><p>Flow-normalized tributary loading trends show mixed results: modest declines in some watersheds (Lamoille, Winooski) offset by stable or increasing loads in others (Missisquoi, Pike River)</p></li>
+</ul>
+<p><strong>Implementation Gaps:</strong></p>
+<ul class="simple">
+<li><p>Voluntary nature of agricultural best management practices limits adoption rates; cost-share funding insufficient to meet demand</p></li>
+<li><p>MS4 stormwater permits and development project requirements provide regulatory framework, but enforcement and effectiveness monitoring lag behind point-source programs</p></li>
+<li><p>River corridor restoration and streambank stabilization require decades of sustained investment and face competing land-use pressures</p></li>
+<li><p>High-flow events (spring snowmelt, summer storms) deliver disproportionate nutrient and sediment loads, overwhelming management efforts during critical periods</p></li>
+</ul>
+<p><strong>Climate Change Impacts:</strong></p>
+<ul class="simple">
+<li><p>More frequent and intense storms increase runoff, erosion, and nutrient delivery even as management practices improve base flow conditions</p></li>
+<li><p>Warmer water temperatures exacerbate algal bloom risk at lower phosphorus concentrations</p></li>
+<li><p>Longer thermal stratification periods increase hypolimnetic oxygen depletion and cyanobacteria bloom duration</p></li>
+<li><p>Changes in snowmelt timing and magnitude alter nutrient delivery patterns and complicate flow-based loading estimates</p></li>
+</ul>
+<p><strong>Key Implication:</strong></p>
+<ul class="simple">
+<li><p>Achieving Lake Champlain TMDL targets will require sustained, multi-decade investment in nonpoint source controls at a scale and pace that matches point-source achievements</p></li>
+<li><p>Adaptive management must account for climate-driven changes in hydrology, temperature, and ecosystem response</p></li>
+<li><p>Political will and funding commitments must be maintained despite slow and incremental progress in nonpoint-source loading reductions</p></li>
+</ul>
+</section>
+<section id="funding-and-economic-considerations">
+<h3>Funding and Economic Considerations<a class="headerlink" href="#funding-and-economic-considerations" title="Permalink to this heading">#</a></h3>
+<p><strong>Investment Scale:</strong></p>
+<ul class="simple">
+<li><p>Vermont has invested &gt;$200 million in State Revolving Fund (SRF) support for Lake Champlain basin wastewater phosphorus upgrades since 2000</p></li>
+<li><p>Act 64 Clean Water Fund provides additional <span class="math notranslate nohighlight">\(20-\)</span>30 million annually for point and nonpoint source projects across Vermont</p></li>
+<li><p>Municipal bonding and user rate increases add substantial local investment; typical household sewer bills increased <span class="math notranslate nohighlight">\(50-\)</span>150/year for phosphorus-related upgrades</p></li>
+<li><p>Federal infrastructure funding (Infrastructure Investment and Jobs Act) provides one-time boost but long-term sustainability requires sustained state and local commitments</p></li>
+</ul>
+<p><strong>Cost-Effectiveness:</strong></p>
+<ul class="simple">
+<li><p>Point-source phosphorus removal costs vary widely: <span class="math notranslate nohighlight">\(20-\)</span>50/kg P removed for optimization at existing facilities, <span class="math notranslate nohighlight">\(100-\)</span>300/kg P removed for major capital upgrades (chemical precipitation, tertiary filtration)</p></li>
+<li><p>Small, rural facilities face higher per-capita costs; enhanced SRF subsidies (principal forgiveness, grants) address affordability for disadvantaged communities</p></li>
+<li><p>Nonpoint-source BMPs often cost-competitive on per-kg basis but require broad landscape-scale implementation to achieve measurable loading reductions</p></li>
+<li><p>CSO controls expensive (<span class="math notranslate nohighlight">\(5-\)</span>50 million for storage/treatment) but deliver co-benefits (reduced pathogens, floatables, aesthetic improvements)</p></li>
+</ul>
+<p><strong>Affordability Challenges:</strong></p>
+<ul class="simple">
+<li><p>Small communities and economically disadvantaged municipalities struggle to support debt service and increased O&amp;M costs from phosphorus controls</p></li>
+<li><p>Rate increases face political resistance, particularly when water quality improvements are slow and incremental</p></li>
+<li><p>Competing infrastructure needs (drinking water, stormwater, collection system rehabilitation, PFAS treatment) strain limited budgets</p></li>
+<li><p>Regionalization and shared services offer potential cost savings but require overcoming institutional and political barriers</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Interstate and International Coordination<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p><strong>Shared Watershed, Shared Responsibility:</strong></p>
+<ul class="simple">
+<li><p>Lake Champlain spans Vermont, New York, and Québec; water quality depends on coordinated action across all jurisdictions</p></li>
+<li><p>Vermont and New York developed joint TMDL with shared reduction commitments and segment-specific targets</p></li>
+<li><p>Vermont-Québec Missisquoi Bay Agreement addresses transboundary pollution in the lake’s most impaired segment</p></li>
+<li><p>Lake Champlain Basin Program (LCBP) facilitates coordination, provides technical support, and maintains stakeholder engagement</p></li>
+</ul>
+<p><strong>Successes:</strong></p>
+<ul class="simple">
+<li><p>Joint long-term monitoring program (LTMP) provides consistent, comparable data across jurisdictions</p></li>
+<li><p>Coordinated permitting strategies for shared watersheds ensure upstream actions complement downstream goals</p></li>
+<li><p>Technical workgroups on modeling, practice effectiveness, and adaptive management share knowledge and inform policy</p></li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul class="simple">
+<li><p>Political and regulatory differences between states and nations complicate implementation timelines and enforcement</p></li>
+<li><p>Economic disparities affect capacity to invest in pollution controls</p></li>
+<li><p>Competing priorities and jurisdictional autonomy limit ability to mandate uniform actions</p></li>
+<li><p>Climate change adds uncertainty that requires flexible, adaptive approaches</p></li>
+</ul>
+</section>
+<section id="monitoring-and-adaptive-management">
+<h3>Monitoring and Adaptive Management<a class="headerlink" href="#monitoring-and-adaptive-management" title="Permalink to this heading">#</a></h3>
+<p><strong>Data Foundation:</strong></p>
+<ul class="simple">
+<li><p>Lake Champlain Long-Term Monitoring Project (LTMP) has collected consistent water quality and biological data since 1992, enabling detection of trends and evaluation of management effectiveness</p></li>
+<li><p>15 lake stations and 21 tributary monitoring sites provide comprehensive coverage of major lake segments and nutrient sources</p></li>
+<li><p>Discharge Monitoring Reports (DMRs) from wastewater facilities provide monthly phosphorus loading data for tracking TMDL progress</p></li>
+<li><p>Vermont Clean Water Initiative Performance Reports document annual investments and quantify phosphorus reductions from point and nonpoint sources</p></li>
+</ul>
+<p><strong>Adaptive Management:</strong></p>
+<ul class="simple">
+<li><p>TMDL includes accountability framework allowing permit limit adjustments if in-lake targets not achieved</p></li>
+<li><p>Periodic model updates incorporate new monitoring data and improved scientific understanding</p></li>
+<li><p>Tactical Basin Plans prioritize watersheds and practices based on cost-effectiveness and readiness</p></li>
+<li><p>Stakeholder engagement ensures transparency and builds support for adaptive strategies</p></li>
+</ul>
+<p><strong>Critical Lessons:</strong></p>
+<ul class="simple">
+<li><p>Long-term, consistent monitoring is essential for distinguishing management effects from climate and natural variability</p></li>
+<li><p>Decades-long time lags between load reductions and lake response (due to legacy phosphorus, groundwater travel time, and sediment storage) require patience and sustained commitment</p></li>
+<li><p>Transparent reporting builds public trust and maintains political support even when progress is incremental</p></li>
+</ul>
+</section>
+<section id="technology-and-innovation">
+<h3>Technology and Innovation<a class="headerlink" href="#technology-and-innovation" title="Permalink to this heading">#</a></h3>
+<p><strong>Proven Technologies:</strong></p>
+<ul class="simple">
+<li><p>Chemical precipitation + tertiary filtration reliably achieves &lt;1.0 mg/L phosphorus at reasonable cost</p></li>
+<li><p>Real-time monitoring and process control optimize chemical use and maintain compliance under variable conditions</p></li>
+<li><p>Green infrastructure (bioretention, permeable pavement, rain gardens) provides co-benefits (stormwater volume reduction, habitat, aesthetics) alongside nutrient control</p></li>
+</ul>
+<p><strong>Emerging Challenges:</strong></p>
+<ul class="simple">
+<li><p>PFAS treatment and biosolids disposal add complexity and cost to wastewater operations</p></li>
+<li><p>Microplastics, pharmaceuticals, and personal care products may require future treatment upgrades</p></li>
+<li><p>Energy efficiency and greenhouse gas reduction goals must be balanced with advanced treatment needs</p></li>
+<li><p>Aging infrastructure and deferred maintenance limit capacity to address new contaminants</p></li>
+</ul>
+<p><strong>Future Opportunities:</strong></p>
+<ul class="simple">
+<li><p>Sensor technology and machine learning enable predictive control and optimization</p></li>
+<li><p>Nature-based solutions (wetland restoration, floodplain reconnection) offer multi-benefit approaches to nutrient and flood management</p></li>
+<li><p>Nutrient recovery (struvite precipitation, biosolids processing) may transform “waste” phosphorus into agricultural resource</p></li>
+<li><p>Regional collaboration and consolidation improve technical and financial sustainability for small systems</p></li>
+</ul>
+</section>
+<section id="equity-and-environmental-justice">
+<h3>Equity and Environmental Justice<a class="headerlink" href="#equity-and-environmental-justice" title="Permalink to this heading">#</a></h3>
+<p><strong>Affordability Concerns:</strong></p>
+<ul class="simple">
+<li><p>Sewer rate increases disproportionately affect low-income households and communities</p></li>
+<li><p>Small, rural municipalities lack economies of scale and face higher per-capita costs</p></li>
+<li><p>Enhanced SRF subsidies help but do not fully address affordability gaps</p></li>
+<li><p>Rate assistance programs and income-based billing structures emerging as equity strategies</p></li>
+</ul>
+<p><strong>Community Impacts:</strong></p>
+<ul class="simple">
+<li><p>Algal blooms and beach closures affect recreation-dependent economies (tourism, fishing, boating)</p></li>
+<li><p>Drinking water contamination (cyanotoxins) poses public health risks, with treatment costs passed to ratepayers</p></li>
+<li><p>Lake property values influenced by water quality perception and impairment status</p></li>
+<li><p>Environmental justice communities may face cumulative impacts (degraded water quality + limited resources for mitigation)</p></li>
+</ul>
+<p><strong>Future Considerations:</strong></p>
+<ul class="simple">
+<li><p>Balancing environmental goals with economic affordability and social equity</p></li>
+<li><p>Ensuring all communities benefit from water quality improvements, not just those with resources to invest</p></li>
+<li><p>Addressing legacy pollution and cumulative impacts in disadvantaged communities</p></li>
+<li><p>Incorporating equity metrics into funding prioritization and regulatory decision-making</p></li>
+</ul>
+</section>
+<section id="regional-collaboration-and-the-lake-champlain-basin-program">
+<h3>Regional Collaboration and the Lake Champlain Basin Program<a class="headerlink" href="#regional-collaboration-and-the-lake-champlain-basin-program" title="Permalink to this heading">#</a></h3>
+<p><strong>LCBP Role:</strong></p>
+<ul class="simple">
+<li><p>Facilitates interstate and international coordination among Vermont, New York, Québec, EPA, and USDA</p></li>
+<li><p>Funds long-term monitoring, technical studies, and demonstration projects</p></li>
+<li><p>Publishes State of the Lake reports synthesizing water quality, ecological health, and management progress</p></li>
+<li><p>Engages stakeholders through education, outreach, and public participation</p></li>
+</ul>
+<p><strong>Collaborative Success:</strong></p>
+<ul class="simple">
+<li><p>1993 Water Quality Agreement and 2010 renewal established shared phosphorus targets</p></li>
+<li><p>1996 load reduction strategy set 20-year, phased implementation framework</p></li>
+<li><p>Joint technical workgroups advance science and inform adaptive management</p></li>
+<li><p>Public engagement maintains visibility and political support for restoration efforts</p></li>
+</ul>
+<p><strong>Ongoing Needs:</strong></p>
+<ul class="simple">
+<li><p>Sustained federal funding (EPA-LCBP appropriations) to support monitoring and coordination</p></li>
+<li><p>State and provincial investment commensurate with pollution reduction commitments</p></li>
+<li><p>Long-term vision and patience as lake response lags behind management actions</p></li>
+<li><p>Adaptation to climate change, emerging contaminants, and evolving science</p></li>
+</ul>
+</section>
+<section id="lessons-for-other-watersheds">
+<h3>Lessons for Other Watersheds<a class="headerlink" href="#lessons-for-other-watersheds" title="Permalink to this heading">#</a></h3>
+<p><strong>Transferable Principles:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Enforceable point-source limits work</strong>: NPDES permits with concentration-based phosphorus limits, supported by funding and technical assistance, deliver measurable, verifiable reductions</p></li>
+<li><p><strong>Technology is available and proven</strong>: Chemical precipitation, tertiary filtration, and process optimization achieve stringent limits at manageable cost</p></li>
+<li><p><strong>Funding mechanisms are critical</strong>: State Revolving Funds, dedicated clean water funds, and federal support enable communities to invest in necessary upgrades</p></li>
+<li><p><strong>Long-term monitoring justifies investment</strong>: Consistent, multi-decade data demonstrate progress, inform adaptive management, and maintain stakeholder support</p></li>
+<li><p><strong>Interstate coordination is essential</strong>: Shared watersheds require collaborative governance, joint monitoring, and mutual accountability</p></li>
+<li><p><strong>Nonpoint sources are harder</strong>: Voluntary programs, funding gaps, and climate variability limit nonpoint-source progress; achieving TMDL targets requires sustained, landscape-scale intervention</p></li>
+<li><p><strong>Patience and persistence</strong>: Lake recovery takes decades; maintaining political will and funding commitments despite slow progress is the ultimate challenge</p></li>
+</ol>
+<p><strong>Vermont’s Lake Champlain Experience:</strong></p>
+<ul class="simple">
+<li><p>Demonstrates that aggressive point-source phosphorus control is technically and economically feasible</p></li>
+<li><p>Highlights the difficulty of achieving comparable nonpoint-source reductions</p></li>
+<li><p>Illustrates the importance of regulatory frameworks, funding mechanisms, and adaptive management</p></li>
+<li><p>Provides national model for TMDL implementation and watershed restoration</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
+<p>The Lake Champlain Basin case study reveals a clear contrast between point-source success and nonpoint-source challenges. Wastewater treatment facilities have achieved dramatic phosphorus reductions through technology upgrades, operational optimization, and stringent regulatory oversight. These point-source achievements demonstrate that even aggressive TMDL wasteload allocations can be met when facilities receive adequate funding, technical support, and clear permit requirements.</p>
+<p>However, overall lake recovery remains incomplete because nonpoint sources—agriculture, stormwater, and streambank erosion—continue to deliver excess phosphorus. Achieving Lake Champlain TMDL targets will require scaling up nonpoint-source interventions to match the magnitude and effectiveness of point-source controls. This demands sustained political will, multi-decade funding commitments, and adaptive management strategies that account for climate change, legacy pollution, and the inherent complexity of diffuse source control.</p>
+<p>Vermont’s experience in the Lake Champlain Basin offers valuable lessons for other states and watersheds pursuing TMDL implementation and water quality restoration. Point-source phosphorus control is achievable and cost-effective; the challenge lies in extending similar success to nonpoint sources and maintaining long-term commitment as lake ecosystems slowly respond to management actions. The path forward requires integrated approaches, collaborative governance, equitable funding, and recognition that water quality restoration is a multi-generational endeavor.</p>
+</section>
 </section>
 </section>
 
@@ -888,11 +1806,89 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interstate-and-international-coordination">Interstate and International Coordination</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-champlain-tmdl">Lake Champlain TMDL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-quality-monitoring">Water Quality Monitoring</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facility-upgrades-and-improvements">Facility Upgrades and Improvements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-collaboration">Regional Collaboration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings">Key Findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-champlain-tmdl">Lake Champlain TMDL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tmdl-development-and-approval">TMDL Development and Approval</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tmdl-structure-and-allocations">TMDL Structure and Allocations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wasteload-allocations-wlas">Wasteload Allocations (WLAs)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-allocations-las">Load Allocations (LAs)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-of-safety">Margin of Safety</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-specific-targets">Segment-Specific Targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-and-accountability">Implementation and Accountability</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#point-source-implementation-wasteload-allocations">Point Source Implementation (Wasteload Allocations)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nonpoint-source-implementation-load-allocations">Nonpoint Source Implementation (Load Allocations)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#progress-and-challenges">Progress and Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vermont-clean-water-initiative-and-reporting">Vermont Clean Water Initiative and Reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interstate-coordination">Interstate Coordination</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#water-quality-monitoring">Water Quality Monitoring</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-champlain-long-term-monitoring-project">Lake Champlain Long-Term Monitoring Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-parameters-and-methods">Monitoring Parameters and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-lake-monitoring">In-Lake Monitoring</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tributary-monitoring">Tributary Monitoring</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#water-quality-trends">Water Quality Trends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tributary-loading-trends">Tributary Loading Trends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-indicators">Biological Indicators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-applications-and-reporting">Data Applications and Reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings-and-implications-for-wastewater-management">Key Findings and Implications for Wastewater Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facility-upgrades-and-improvements">Facility Upgrades and Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tmdl-implementation-framework">TMDL Implementation Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-facility-upgrades">Major Facility Upgrades</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#burlington-main-wwtf">Burlington Main WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rutland-wwtf">Rutland WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#montpelier-wwtf">Montpelier WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#middlebury-wwtf">Middlebury WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#essex-junction-wwtf">Essex Junction WWTF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#small-and-rural-facility-upgrades">Small and Rural Facility Upgrades</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phosphorus-removal-technologies">Phosphorus Removal Technologies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-precipitation">Chemical Precipitation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tertiary-filtration">Tertiary Filtration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enhanced-biological-phosphorus-removal-ebpr">Enhanced Biological Phosphorus Removal (EBPR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-optimization">Operational Optimization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-and-financial-mechanisms">Funding and Financial Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-water-state-revolving-fund-cwsrf">Clean Water State Revolving Fund (CWSRF)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-water-fund-act-64">Clean Water Fund (Act 64)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#municipal-bonding-and-rate-increases">Municipal Bonding and Rate Increases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#federal-support">Federal Support</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tracking-and-compliance">Performance Tracking and Compliance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ongoing-challenges-and-future-needs">Ongoing Challenges and Future Needs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#climate-change-impacts">Climate Change Impacts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aging-infrastructure">Aging Infrastructure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#emerging-contaminants">Emerging Contaminants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#small-system-capacity">Small System Capacity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accountability-and-adaptive-management">Accountability and Adaptive Management</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-resources-and-references">Key Resources and References</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-findings">Key Findings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#point-source-phosphorus-control-a-success-story">Point-Source Phosphorus Control: A Success Story</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonpoint-sources-the-remaining-challenge">Nonpoint Sources: The Remaining Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-and-economic-considerations">Funding and Economic Considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interstate and International Coordination</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-adaptive-management">Monitoring and Adaptive Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technology-and-innovation">Technology and Innovation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equity-and-environmental-justice">Equity and Environmental Justice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-collaboration-and-the-lake-champlain-basin-program">Regional Collaboration and the Lake Champlain Basin Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-for-other-watersheds">Lessons for Other Watersheds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
