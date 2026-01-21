@@ -11,7 +11,7 @@ chapters:
   - file: chapters/04_watersheds
     title: Wastewater and Watersheds
   - file: chapters/05_resilience
-    title: Environment Disaster and Wastewater Resilience
+    title: Environmental Disaster and Wastewater Resilience
   - file: chapters/06_case_study
     title: "Case Study: Lake Champlain Basin"
   - file: chapters/07_scenario_analysis
