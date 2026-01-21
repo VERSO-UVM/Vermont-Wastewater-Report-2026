@@ -58,3 +58,7 @@ sphinx:
     exclude_patterns:
       - '**.ipynb_checkpoints'
       - '.venv/**'
+    # Disable epub builder to avoid imghdr module error in Python 3.13+
+    builders:
+      - html
+      - linkcheck
