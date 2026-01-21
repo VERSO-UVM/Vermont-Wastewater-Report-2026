@@ -34,6 +34,7 @@ html:
 launch_buttons:
   notebook_interface: "jupyterlab"
   binderhub_url: ""
+  thebe: false
 
 # Parse and render settings
 parse:
@@ -54,3 +55,6 @@ parse:
 sphinx:
   config:
     html_show_copyright: true
+    exclude_patterns:
+      - '**.ipynb_checkpoints'
+      - '.venv/**'
