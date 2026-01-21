@@ -1,0 +1,22 @@
+# Table of contents
+format: jb-book
+root: intro
+chapters:
+  - file: chapters/01_overview
+    title: Vermont's Wastewater Systems - An Overview
+  - file: chapters/02_data_sources
+    title: Data Sources and GIS Workflow
+  - file: chapters/03_mapping
+    title: Mapping Wastewater Infrastructure
+  - file: chapters/04_watersheds
+    title: Wastewater and Watersheds
+  - file: chapters/05_resilience
+    title: Environment Disaster and Wastewater Resilience
+  - file: chapters/06_case_study
+    title: "Case Study: Lake Champlain Basin"
+  - file: chapters/07_scenario_analysis
+    title: Scenario Analysis and Planning Tools
+  - file: chapters/08_policy
+    title: Policy Implications and Regulatory Context
+  - file: chapters/09_appendix
+    title: Appendix
