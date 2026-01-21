@@ -6,7 +6,8 @@ copyright: "2026"
 
 # Force re-execution of notebooks on each build
 execute:
-  execute_notebooks: auto
+  # Skip executing notebooks during CI to avoid data dependency failures.
+  execute_notebooks: off
   timeout: 300
 
 # Define the name of the latex output file for PDF builds
