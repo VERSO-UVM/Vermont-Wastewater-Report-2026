@@ -1,6 +1,6 @@
 # Book settings
 title: Vermont Wastewater Report 2026
-author: Vermont Wastewater Analysis Team
+author: VERSO, University of Vermont
 copyright: "2026"
 
 # Force re-execution of notebooks on each build
