@@ -4,7 +4,7 @@ Welcome to the Vermont Wastewater Report 2026, a comprehensive analysis of Vermo
 
 ## Overview
 
-This report provides an in-depth examination of Vermont's wastewater management systems, incorporating GIS analysis, watershed mapping, and environmental resilience studies. The analysis aims to support policy development, infrastructure planning, and environmental protection efforts across the state.
+This report provides an examination of Vermont's wastewater management systems, incorporating GIS analysis, watershed mapping, and environmental resilience studies. The analysis aims to support policy development, infrastructure planning, and environmental protection efforts across the state.
 
 ## Report Structure
 
@@ -22,7 +22,11 @@ This report is organized into the following chapters:
 
 ## About This Project
 
-This report was developed to support sustainable wastewater management in Vermont and to provide decision-makers with data-driven insights for infrastructure planning and environmental protection.
+This report was developed through the collaborative efforts of the [Vermont EPSCoR Research on Adaptation to Climate Change (VERSO)](https://verso.w3.uvm.edu/) program at the University of Vermont. VERSO brings together researchers, students, and stakeholders to address Vermont's climate adaptation challenges through interdisciplinary research and community engagement.
+
+The foundation for this analysis comes from the [Wastewater Infrastructure Mapping](https://verso-uvm.github.io/Wastewater-Infrastructure-Mapping/) project, a 2024-2025 initiative funded by the University of Vermont and the Leahy Institute for Rural Partnerships in partnership with the Windham Regional Commission. This project assembled a comprehensive state-wide map of Vermont's wastewater sewage lines, treatment facilities, service areas, and access points by integrating current data from multiple authoritative sources.
+
+Student contributors participated through the [Open Research Community Accelerator (ORCA)](https://verso.w3.uvm.edu/orca/) program, which provides undergraduate and graduate students with hands-on experience in open science practices, collaborative research, and real-world problem-solving. ORCA interns worked to combine spatial data, conduct GIS analysis, and develop interactive visualizations to support sustainable wastewater management in Vermont and provide decision-makers with data-driven insights for infrastructure planning and environmental protection.
 
 ## Data
 

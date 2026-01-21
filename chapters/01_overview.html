@@ -426,10 +426,11 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="c1"># Set up visualization defaults</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8-darkgrid&#39;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
 </div>
@@ -447,9 +448,108 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load wastewater facility data</span>
-<span class="c1"># data_path = &#39;../data/wastewater_facilities.csv&#39;</span>
-<span class="c1"># facilities_df = pd.read_csv(data_path)</span>
-<span class="c1"># facilities_df.head()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+<span class="c1"># Load the GeoJSON file</span>
+<span class="n">data_path</span> <span class="o">=</span> <span class="s1">&#39;../data/Vermont_Water_Investment_Infrastructure_Public_points.geojson&#39;</span>
+<span class="n">facilities_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+
+<span class="c1"># Display column names and first few rows to understand the data structure</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columns in dataset:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">facilities_gdf</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">First few rows:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">facilities_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Check data types</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data types:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">facilities_gdf</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="c1"># Try to filter for wastewater treatment facilities</span>
+<span class="c1"># Convert Type column to string if needed</span>
+<span class="k">if</span> <span class="s1">&#39;Type&#39;</span> <span class="ow">in</span> <span class="n">facilities_gdf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">wwt_facilities</span> <span class="o">=</span> <span class="n">facilities_gdf</span><span class="p">[</span><span class="n">facilities_gdf</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Wastewater&#39;</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+    
+    <span class="c1"># Count facilities by county if County column exists</span>
+    <span class="k">if</span> <span class="s1">&#39;County&#39;</span> <span class="ow">in</span> <span class="n">facilities_gdf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">facilities_by_county</span> <span class="o">=</span> <span class="n">wwt_facilities</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;County&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wastewater Treatment Facilities by County:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">county</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">facilities_by_county</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">county</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> facilities&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total: </span><span class="si">{</span><span class="n">facilities_by_county</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> facilities&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Note: &#39;County&#39; column not found in dataset&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total wastewater facilities found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">wwt_facilities</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Note: &#39;Type&#39; column not found. Please check column names above.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Columns in dataset:
+[&#39;OBJECTID&#39;, &#39;Type&#39;, &#39;SystemType&#39;, &#39;Status&#39;, &#39;Owner&#39;, &#39;Notes&#39;, &#39;Source&#39;, &#39;SourceNotes&#39;, &#39;SourceDate&#39;, &#39;PermitNo&#39;, &#39;GEOIDTXT&#39;, &#39;Creator&#39;, &#39;CreateDate&#39;, &#39;Editor&#39;, &#39;EditDate&#39;, &#39;Audience&#39;, &#39;GlobalID&#39;, &#39;geometry&#39;]
+
+First few rows:
+   OBJECTID  Type  SystemType    Status  Owner                      Notes  \
+0         1     2  Stormwater  Existing    NaN                        NaN   
+1         2     2  Stormwater  Existing    NaN                        NaN   
+2         3     2  Stormwater  Existing    NaN                        NaN   
+3         4     2  Stormwater  Existing    NaN                        NaN   
+4         5     9  Stormwater  Existing    NaN  Data from Gary King : GPS   
+
+   Source SourceNotes                     SourceDate   PermitNo    GEOIDTXT  \
+0     6.0         NaN                            NaN  4389-9003  5002530925   
+1     6.0         NaN                            NaN  4389-9003  5002530925   
+2     6.0         NaN                            NaN  4389-9003  5002507900   
+3     6.0         NaN                            NaN  4389-9003  5002507900   
+4     2.0         NaN  Wed, 01 Jun 2005 00:00:00 GMT        NaN  5002507900   
+
+  Creator                     CreateDate        Editor  \
+0     NaN  Sun, 01 Aug 2010 00:00:00 GMT  DAVID.AINLEY   
+1     NaN  Sun, 01 Aug 2010 00:00:00 GMT  DAVID.AINLEY   
+2     NaN  Sun, 01 Aug 2010 00:00:00 GMT  DAVID.AINLEY   
+3     NaN  Sun, 01 Aug 2010 00:00:00 GMT  DAVID.AINLEY   
+4     NaN  Sun, 01 Aug 2010 00:00:00 GMT  DAVID.AINLEY   
+
+                        EditDate Audience  \
+0  Tue, 28 Apr 2020 15:05:15 GMT   Public   
+1  Tue, 28 Apr 2020 15:05:15 GMT   Public   
+2  Tue, 28 Apr 2020 15:05:15 GMT   Public   
+3  Tue, 28 Apr 2020 15:05:15 GMT   Public   
+4  Tue, 28 Apr 2020 15:30:25 GMT   Public   
+
+                               GlobalID                    geometry  
+0  cee91e9b-9811-42d8-83b1-10570c65b1b3  POINT (-72.54747 42.82369)  
+1  12c53f6d-1fdc-4683-8787-6c840bea10bf  POINT (-72.54723 42.82379)  
+2  e74f4c1e-4cf1-4384-8c6d-8ac1768985e5  POINT (-72.54755 42.82419)  
+3  e295154d-12d5-4b9c-a917-125c32eea78e  POINT (-72.54747 42.82438)  
+4  bad940da-1462-4bf1-abdb-9aa9ad062afb  POINT (-72.56672 42.82444)  
+
+Data types:
+OBJECTID          int32
+Type              int32
+SystemType          str
+Status              str
+Owner           float64
+Notes               str
+Source          float64
+SourceNotes         str
+SourceDate          str
+PermitNo            str
+GEOIDTXT            str
+Creator             str
+CreateDate          str
+Editor              str
+EditDate            str
+Audience            str
+GlobalID            str
+geometry       geometry
+dtype: object
+
+Note: &#39;County&#39; column not found in dataset
+Total wastewater facilities found: 0
 </pre></div>
 </div>
 </div>
@@ -457,20 +557,25 @@ document.write(`
 </section>
 <section id="treatment-technologies">
 <h2>Treatment Technologies<a class="headerlink" href="#treatment-technologies" title="Permalink to this heading">#</a></h2>
-<p>Vermont facilities use a mix of conventional municipal processes and small-system/onsite technologies tailored to terrain, climate, and receiving-water sensitivity.</p>
-<p><strong>Lagoons and aerated ponds</strong> serve many smaller towns (e.g., Hardwick, Richford), delivering robust primary/secondary treatment with long detention and relatively low energy needs.</p>
-<p><strong>Activated sludge (plug-flow, oxidation ditch, SBR)</strong> is used in larger WWTFs (e.g., Burlington Main and North, Montpelier, Rutland) to meet tighter BOD/TSS and nutrient limits; SBRs handle seasonal/variable flows common in resort areas (e.g., Stowe, Killington).</p>
-<p><strong>Trickling filters and rotating biological contactors (RBCs)</strong> persist as legacy fixed-film systems in some plants (e.g., Middlebury historically), offering stable performance under moderate loading while upgrades are phased.</p>
-<p><strong>Membrane and tertiary filtration</strong>—sand/cloth filters and occasional MBRs—polish effluent to low TSS and phosphorus for nutrient-sensitive waters; polishing filters are common where phosphorus TMDLs apply (e.g., Lake Champlain basin plants).</p>
-<p><strong>Nutrient removal and disinfection</strong> combine chemical phosphorus precipitation (alum/ferrous), targeted biological P/denitrification where limits demand, and disinfection via UV or hypochlorite with dechlorination; many Champlain-basin facilities run chem-P and UV to hit P and bacteria targets.</p>
-<p><strong>Solids handling</strong> relies on aerobic/anaerobic digestion, belt presses, and centrifuges; biosolids are land-applied, composted, or landfilled depending on quality and haul distance (e.g., hauling from smaller lagoons to regional compost/land application sites).</p>
-<p><strong>Indirect/land application systems</strong> use spray or rapid infiltration under indirect discharge permits, emphasizing soil treatment capacity and groundwater protection (common for resorts, institutions, and some rural community systems).</p>
-<p><strong>Onsite and advanced treatment units</strong> pair septic + soil dispersal with mounds for shallow-to-bedrock or high-water-table sites, and employ advanced media units (aerobic, textile/foam, peat/biofilters) to reduce BOD/TSS/N before subsurface dispersal; widely used for lakefront parcels and rural homes/businesses where soils are limited.</p>
+<p>Vermont facilities use a mix of conventional municipal processes and small-system/onsite technologies tailored to terrain, climate, and receiving-water sensitivity:</p>
+<ul class="simple">
+<li><p><strong>Lagoons and aerated ponds</strong> serve many smaller towns (e.g., Hardwick, Richford), delivering robust primary/secondary treatment with long detention and relatively low energy needs.</p></li>
+<li><p><strong>Activated sludge (plug-flow, oxidation ditch, SBR)</strong> is used in larger WWTFs (e.g., Burlington Main and North, Montpelier, Rutland) to meet tighter BOD/TSS and nutrient limits; SBRs handle seasonal/variable flows common in resort areas (e.g., Stowe, Killington).</p></li>
+<li><p><strong>Trickling filters and rotating biological contactors (RBCs)</strong> persist as legacy fixed-film systems in some plants (e.g., Middlebury historically), offering stable performance under moderate loading while upgrades are phased.</p></li>
+<li><p><strong>Membrane and tertiary filtration</strong>—sand/cloth filters and occasional MBRs—polish effluent to low TSS and phosphorus for nutrient-sensitive waters; polishing filters are common where phosphorus TMDLs apply (e.g., Lake Champlain basin plants).</p></li>
+<li><p><strong>Nutrient removal and disinfection</strong> combine chemical phosphorus precipitation (alum/ferrous), targeted biological P/denitrification where limits demand, and disinfection via UV or hypochlorite with dechlorination; many Champlain-basin facilities run chem-P and UV to hit P and bacteria targets.</p></li>
+<li><p><strong>Solids handling</strong> relies on aerobic/anaerobic digestion, belt presses, and centrifuges; biosolids are land-applied, composted, or landfilled depending on quality and haul distance (e.g., hauling from smaller lagoons to regional compost/land application sites).</p></li>
+<li><p><strong>Indirect/land application systems</strong> use spray or rapid infiltration under indirect discharge permits, emphasizing soil treatment capacity and groundwater protection (common for resorts, institutions, and some rural community systems).</p></li>
+<li><p><strong>Onsite and advanced treatment units</strong> pair septic + soil dispersal with mounds for shallow-to-bedrock or high-water-table sites, and employ advanced media units (aerobic, textile/foam, peat/biofilters) to reduce BOD/TSS/N before subsurface dispersal; widely used for lakefront parcels and rural homes/businesses where soils are limited.</p></li>
+</ul>
 <p>Design choices reflect site constraints (soils, groundwater separation, cold-weather operation), permit limits for nutrients/pathogens, and operational capacity of small municipalities and decentralized systems.</p>
 </section>
 <section id="geographic-distribution-of-facilities">
 <h2>Geographic Distribution of Facilities<a class="headerlink" href="#geographic-distribution-of-facilities" title="Permalink to this heading">#</a></h2>
-<p>Vermont’s wastewater infrastructure follows its people and topography. Along the Winooski, Otter Creek, Lamoille, and Connecticut River corridors, municipal WWTFs in places like Burlington, Montpelier, Rutland, and Brattleboro manage the highest flows and rely on surface-water discharge permits. In resort and upland towns such as Stowe and Killington, seasonally variable flows are often handled with SBRs or indirect/land-application systems to protect sensitive headwaters. Rural and lakefront areas around Lake Champlain and Memphremagog lean on decentralized/onsite systems, frequently using mounds or advanced treatment where soils and setbacks are tight. Small community and package plants serving mobile home parks, schools, and village centers fill gaps where neither large municipal plants nor individual onsite systems are practical. These siting patterns shape permit limits, CSO risk, nutrient controls, and groundwater protections across Vermont’s basins.</p>
+<p>Vermont’s wastewater infrastructure follows its people and topography. Along the Winooski, Otter Creek, Lamoille, and Connecticut River corridors, municipal WWTFs in places like Burlington, Montpelier, Rutland, and Brattleboro manage the highest flows and rely on surface-water discharge permits.</p>
+<p>In resort and upland towns such as Stowe and Killington, seasonally variable flows are often handled with SBRs or indirect/land-application systems to protect sensitive headwaters.</p>
+<p>Rural and lakefront areas around Lake Champlain and Memphremagog lean on decentralized/onsite systems, frequently using mounds or advanced treatment where soils and setbacks are tight.</p>
+<p>Small community and package plants serving mobile home parks, schools, and village centers fill gaps where neither large municipal plants nor individual onsite systems are practical. These siting patterns shape permit limits, CSO risk, nutrient controls, and groundwater protections across Vermont’s basins.</p>
 </section>
 <section id="regulatory-framework">
 <h2>Regulatory Framework<a class="headerlink" href="#regulatory-framework" title="Permalink to this heading">#</a></h2>
@@ -512,6 +617,8 @@ document.write(`
 <h2>Key Challenges and Opportunities<a class="headerlink" href="#key-challenges-and-opportunities" title="Permalink to this heading">#</a></h2>
 <p>Aging infrastructure and infiltration/inflow strain wet-weather capacity, with legacy sewers and manholes driving CSO/SSO risk; targeted rehab and green stormwater practices help trim peaks and reclaim headroom. Nutrient limits continue to tighten under Lake Champlain and Memphremagog TMDLs, pushing chem-P optimization, tertiary filtration, and in some cases biological P/denitrification upgrades. Small towns and decentralized systems face staffing and budget constraints, making regionalization, contract operations, and remote monitoring practical paths to stable O&amp;M. Climate resilience is rising in importance as intense storms and freeze-thaw cycles stress pipes, pumps, and lagoons—backup power, flood-hardening, and redundancy are becoming standard considerations.</p>
 <p>Biosolids management remains constrained by hauling distance, landfill capacity, and emerging contaminants such as PFAS; diversifying outlets through composting or compliant land application can mitigate risk. Better data and automation—SCADA, flow metering, and sound lab QA/QC—improve compliance, chemical dosing, and energy use, while shared dashboards can support small operators. Growth and land-use pressure in resort and lakefront areas increase reliance on advanced onsite and indirect systems; consistent permitting and parcel-level records are key to managing cumulative impacts. Funding and affordability cut across all these needs: pairing asset management with SRF and grants allows risk-based prioritization without overburdening ratepayers.</p>
+<p>The Wastewater Infrastructure Map was the collective effort in 2024-2025 of University of Vermont student interns in the Open Research Community Accelerator program. The goal was to create a state-wide map for Vermont of wastewater sewage lines, treatment facilities, service areas and access points. Funded by the Leahy Institute for Rural Partnerships in partnership with the Widnham Regional Commsions, the students combined current data from multiple sources.</p>
+<p>Here is a link to the ANR webmap <a class="reference external" href="https://vtanr.maps.arcgis.com/apps/mapviewer/index.html?webmap=de7e8f0627b5482a851b379e29200a74">https://vtanr.maps.arcgis.com/apps/mapviewer/index.html?webmap=de7e8f0627b5482a851b379e29200a74</a> and a link to the current water infrastrcture on the Geodata portal <a class="reference external" href="https://geodata.vermont.gov/maps/01210da4457d42a1bbcc43f7e54cbad6/about">https://geodata.vermont.gov/maps/01210da4457d42a1bbcc43f7e54cbad6/about</a></p>
 </section>
 </section>
 
