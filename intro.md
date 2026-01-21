@@ -30,6 +30,8 @@ Student contributors participated through the [Open Research Community Accelerat
 
 ## Data
 
+![Overview Screenshot](/img/overview_screenshot.png)
+
 All data used in this analysis is stored in the `data/` directory and documented within the relevant chapters.
 
 ## How to Use This Report
